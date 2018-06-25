@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+@@include('partials/header.html', {
+    "title" : "Trang chủ",
+    "fileStyle" : "css/home_style.css"
+})
+<body>
+@@include('partials/menu.html', {
+    "active-page" : {
+        "menu1" : "active",
+        "menu2" : "menu",
+        "menu3" : "menu",
+        "menu4" : "menu"
+    }
+})
+
+@@include('partials/banner.html')
+@@include('partials/content.html')
+@@include('partials/whyAgent.html')  
+
+@@include('partials/footer.html')
+</body>
+</html>

@@ -1,0 +1,130 @@
+@charset 'utf-8';
+@import "../../node_modules/sass-bem/bem";
+.img-responsive{
+	display: block;
+	margin: 0 auto;
+}
+.section{
+	padding: 70px 0;
+}
+/**********
+Interview-block
+**********/
+#Interviewer-block{    
+    background: #fff;
+}
+#Candidate-block{    
+    background: #f5f5f5;
+}
+.txt-des{
+	margin-top: -15px;
+	padding:0 20px 40px;
+}
+/*interview-list*/
+@include b('inter-list'){
+    @include b('item-info'){
+		background:#fff;
+		box-shadow: 1px 0 6px 0 #ccc;
+		position: relative;
+		height: 432px;
+		max-width: 393px;
+		margin: 0 5px 50px;
+		& a{
+			text-decoration: none;
+		}		
+		img{
+			width: 100%;
+		}
+
+		@include element('des'){
+			background: rgba(0, 0, 0, 0) url("../images/interview/bg_transp_interview.png") no-repeat scroll center center / 100% 100%;
+			bottom: -3px;
+		    height: 157px;
+		    left: 0;
+		    padding: 0 15px 0;
+		    position: absolute;
+		    right: 0;
+		    width: auto;  
+		}
+		@include element('title'){
+			color:#1a1a1a;
+			display: inline-block;
+			background: #e8e8e8;
+			padding: 10px 20px 9px;
+			margin-left: -35px;
+			font-weight: bold;
+			min-width: 115px;
+		}
+		@include element('txt'){
+			color:#fff;
+			display: block;
+			line-height: 18px;
+			margin-top:20px;
+			margin-bottom: 10px;
+		}
+
+		@include element('interviewer'){	
+			top: 11.6%;		   
+		    right: 16px;
+		    padding: 0;
+		    position: absolute;						    		    
+		    text-align: center;
+		    img{
+		    	width: auto;
+		    }
+		    @include at('candidate'){
+				top:38%;
+			}
+		}	
+		
+		@include element('name'){
+			font-size: 14px;
+			line-height: 20px;
+			color: #4d4e4d;
+		}
+    }
+    /*@include m('candidate'){
+		@include at('item-info'){
+			@include element('interviewer'){
+				top:38%;
+			} 
+		}
+	}*/
+}
+
+
+@media (max-width: 1199px) {
+	.section-block{
+		padding-left: 15px;
+		padding-right:15px;
+	}
+	.inter-list {
+	    @include b('item-info'){
+			@include element('des'){				
+			    height: auto;			    
+			}			
+	    }
+	}
+	
+}
+@media (max-width: 767px) {
+	.inter-list{
+		margin-left:-10px;
+		margin-right:-10px;
+	    @include b('item-info'){
+	    	margin:0 auto  20px !important;
+	    	@include element('des'){
+				margin-bottom: -20px;
+	    	}	    	
+	    }
+	    &:first-child{
+			margin-left:auto !important;
+			margin-right: auto !important;
+		}
+	}
+
+	
+}
+/**********
+End Profile-block
+**********/

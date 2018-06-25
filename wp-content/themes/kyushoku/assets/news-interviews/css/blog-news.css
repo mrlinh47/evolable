@@ -1,0 +1,154 @@
+.img-responsive {
+  display: block;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 70px 0;
+}
+
+/**********
+Blog-news-block
+**********/
+#Blog-news-block {
+  background: #fff;
+}
+
+/*blog-news-list*/
+.blog-news-list .item-info {
+  background: #fff;
+  box-shadow: 1px 0 6px 0 #ccc;
+  position: relative;
+  height: 250px;
+  max-width: 393px;
+  margin: 0 -5px 50px;
+}
+.blog-news-list .item-info a {
+  text-decoration: none;
+}
+.blog-news-list .item-info:first-child {
+  margin-left: -5px;
+  margin-right: 0;
+}
+.blog-news-list .item-info img {
+  width: 100%;
+}
+.blog-news-list .item-info__des {
+  background: transparent url("../images/blog_news/bg_transp_news.png") no-repeat scroll center center/100% 100%;
+  bottom: 0;
+  height: 123px;
+  left: 0;
+  padding: 28px 10px 0px;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  text-align: justify;
+}
+.blog-news-list .item-info__date {
+  color: #fff;
+  display: block;
+}
+.blog-news-list .item-info__title {
+  color: #fff;
+  display: block;
+  line-height: 18px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/*pagination-info*/
+.pagination {
+  display: block;
+  margin-top: 40px;
+}
+.pagination .pagination-info {
+  text-align: center;
+  padding: 0;
+}
+.pagination .pagination-info li {
+  display: inline-block;
+}
+.pagination .pagination-info li a {
+  background-color: #fff;
+  border: 1px solid #4d4e4d;
+  cursor: pointer;
+  padding: 12px;
+  padding: 0.2rem 0;
+  width: 30px;
+  color: #4d4e4d;
+  text-decoration: none;
+  display: block;
+}
+.pagination .pagination-info li a:hover, .pagination .pagination-info li a:active {
+  color: #fff;
+  text-decoration: none;
+  background: #4d4e4d;
+  border: 1px solid #4d4e4d;
+}
+.pagination .pagination-info li:first-child a, .pagination .pagination-info li:last-child a {
+  background: 0;
+  border: 0;
+  width: auto;
+  padding: 0 15px;
+}
+.pagination .pagination-info li:first-child a:hover, .pagination .pagination-info li:first-child a:active, .pagination .pagination-info li:last-child a:hover, .pagination .pagination-info li:last-child a:active {
+  color: #4d4e4d;
+  text-decoration: underline;
+}
+.pagination .pagination-info li.active a {
+  color: #fff;
+  text-decoration: none;
+  background: #4d4e4d;
+  border: 1px solid #4d4e4d;
+}
+.pagination .pagination-info__dots {
+  padding: 0.2rem 0.3rem;
+}
+
+@media (max-width: 1199px) {
+  .section-block {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .blog-news-list .item-info__des {
+    height: auto;
+  }
+}
+@media (max-width: 767px) {
+  .blog-news-list .item-info {
+    margin: 0 auto  20px !important;
+  }
+  .blog-news-list:first-child {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /*pagination-info*/
+  .pagination .pagination-info {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .pagination .pagination-info li a {
+    padding: 0;
+    width: 25px;
+  }
+  .pagination .pagination-info li:first-child a, .pagination .pagination-info li:last-child a {
+    padding-left: 0;
+    padding-right: 5px;
+    width: auto;
+  }
+  .container-fluid.section {
+    padding-top: 20px;
+  }
+}
+@media (max-width: 414px) {
+  .blog-news-list__item {
+    padding: 0px !important;
+  }
+}
+/**********
+End Profile-block
+**********/
+
+/*# sourceMappingURL=blog-news.css.map */

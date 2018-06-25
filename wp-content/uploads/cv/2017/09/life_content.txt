@@ -1,0 +1,353 @@
+<div id="page-life">
+	<div class="section" id="breadcrumbs">
+		<div class="container">		
+			<div class="breadcrumb-link">
+				<ol>
+					<li><a href="[url]">Home</a></li>
+					<li><span>園での生活</span></li>
+				</ol>
+			</div>
+			<ul class="nav-tabs">
+				<li>
+					<a href="#tab1"><img src="img/life/tab1.png" alt="一日の流れ"></a>
+				</li>
+				<li>
+					<a href="#tab2"><img src="img/life/tab2.png" alt="年間行事"></a>
+				</li>
+				<li>
+					<a href="#tab3" id="anchor-other"><img src="img/life/tab3.png" alt="課外教室"></a>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /breadcrumbs -->
+
+	<div class="section banner-page sp-only">
+		<img src="img/life/sp/main-img.png" class="img-responsive">
+		<div class="container">
+			<ul class="nav-tabs">
+				<li>
+					<a href="#tab1"><img src="img/life/sp/tab1.png" alt="一日の流れ"></a>
+				</li>
+				<li>
+					<a href="#tab2"><img src="img/life/sp/tab2.png" alt="年間行事"></a>
+				</li>
+				<li>
+					<a href="#tab3" id="anchor-other"><img src="img/life/sp/tab3.png" alt="課外教室"></a>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /banner-page -->
+
+	<div class="section section-flow-day" id="tab1">
+		<div class="container">
+			<h3 class="fd-title">
+				<img src="img/life/title1.png" alt="一日の流れ" class="pc-only">
+				<img src="img/life/sp/title1.png" alt="一日の流れ" class="sp-only img-responsive">
+			</h3>
+			<div class="row fd-content">
+				<div class="col">
+					<div class="fd-box">
+						<div class="fd-box-img pc-only">
+							<img src="img/life/1.png" alt="子供" class="img-responsive">
+						</div>
+						<div class="fd-box-txt">
+							<label>8:50～9:00</label>
+							<h4>☆登園</h4>
+							<p>出席ノートにシールをはって、<br>身支度をします。</p>
+						</div>
+						<div class="fd-box-img sp-only">
+							<img src="img/life/sp/1.png" alt="子供" class="img-responsive">
+						</div>
+					</div>
+				</div><!-- /-box -->
+				<div class="col">
+					<div class="fd-box">
+						<div class="fd-box-img pc-only">
+							<img src="img/life/2.png" alt="子供" class="img-responsive">
+						</div>
+						<div class="fd-box-txt">
+							<label>9:00～9:40</label>
+							<h4>☆自由あそび</h4>
+							<p>げんきいっぱい、園庭であそびます！遊具、砂場、おにごっこ、サッカー…自分のあそびをみつけて、体をたくさん動かしましょう！</p>
+						</div>
+						<div class="fd-box-img sp-only">
+							<img src="img/life/sp/2.png" alt="子供" class="img-responsive">
+						</div>
+					</div>
+				</div><!-- /-box -->
+				<div class="col">
+					<div class="fd-box">
+						<div class="fd-box-img pc-only">
+							<img src="img/life/3.png" alt="子供" class="img-responsive">
+						</div>
+						<div class="fd-box-txt">
+							<label>9:40～10:00</label>
+							<h4>☆自由あそび</h4>
+							<p>全園児が集合して、お話を聞いたり、うたを元気よく歌ったり、リズム体操、ゲームをします。また、秋頃からなわとび、マラソンをして、寒さや病気に負けない丈夫な体をつくります。</p>
+						</div>
+						<div class="fd-box-img sp-only">
+							<img src="img/life/sp/3.png" alt="子供" class="img-responsive">
+						</div>
+					</div>
+				</div><!-- /-box -->
+				<div class="col">
+					<div class="fd-box">
+						<div class="fd-box-img pc-only">
+							<img src="img/life/4.png" alt="子供" class="img-responsive">
+						</div>
+						<div class="fd-box-txt">
+							<label>10:00～11:00</label>
+							<h4>☆一斉保育</h4>
+							<p>各クラス、保育室でうたを歌ったり、絵を描いたり、製作をします。</p>
+						</div>
+						<div class="fd-box-img sp-only">
+							<img src="img/life/sp/4.png" alt="子供" class="img-responsive">
+						</div>
+					</div>
+				</div><!-- /-box -->
+				<div class="col">
+					<div class="fd-box">
+						<div class="fd-box-img pc-only">
+							<img src="img/life/5.png" alt="子供" class="img-responsive">
+						</div>
+						<div class="fd-box-txt">
+							<label>11:00～12:00</label>
+							<h4>☆自由あそび</h4>
+							<p>お弁当の前に、たくさん遊んで体を動かして、おなかを空かせよう！</p>
+						</div>
+						<div class="fd-box-img sp-only">
+							<img src="img/life/sp/5.png" alt="子供" class="img-responsive">
+						</div>
+					</div>
+				</div><!-- /-box -->
+				<div class="col">
+					<div class="fd-box">
+						<div class="fd-box-img pc-only">
+							<img src="img/life/6.png" alt="子供" class="img-responsive">
+						</div>
+						<div class="fd-box-txt">
+							<label>12:00～13:00</label>
+							<h4>☆お弁当</h4>
+							<p>月・水・金…給食（わくわく広場）<br>火・木…お弁当</p>
+						</div>
+						<div class="fd-box-img sp-only">
+							<img src="img/life/sp/6.png" alt="子供" class="img-responsive">
+						</div>
+					</div>
+				</div><!-- /-box -->
+				<div class="col">
+					<div class="fd-box">
+						<div class="fd-box-img pc-only">
+							<img src="img/life/7.png" alt="子供" class="img-responsive">
+						</div>
+						<div class="fd-box-txt">
+							<label>13:00～13:30</label>
+							<h4>☆自由あそび</h4>
+							<p>おともだちとなかよくあそびましょう！</p>
+						</div>
+						<div class="fd-box-img sp-only">
+							<img src="img/life/sp/7.png" alt="子供" class="img-responsive">
+						</div>
+					</div>
+				</div><!-- /-box -->
+				<div class="col">
+					<div class="fd-box">
+						<div class="fd-box-img pc-only">
+							<img src="img/life/8.png" alt="子供" class="img-responsive">
+						</div>
+						<div class="fd-box-txt">
+							<label>13:30～14:00</label>
+							<h4>☆おかえりの支度降園</h4>
+							<p>明日もたくさん遊ぼうね！</p>
+						</div>
+						<div class="fd-box-img sp-only">
+							<img src="img/life/sp/8.png" alt="子供" class="img-responsive">
+						</div>
+					</div>
+				</div><!-- /-box -->
+				<div class="col">
+					<div class="fd-box">
+						<div class="fd-box-img pc-only">
+							<img src="img/life/9.png" alt="子供" class="img-responsive">
+						</div>
+						<div class="fd-box-txt">
+							<div class="end-friday">月～金　保育終了後</div>
+							<label class="other">14:00～17:00</label>
+							<h4 class="other">（午前保育時は12:00～17:00）</h4>
+							<p>チケット制　１時間300円</p>
+						</div>
+						<div class="fd-box-img sp-only">
+							<img src="img/life/sp/9.png" alt="子供" class="img-responsive">
+						</div>
+					</div>
+				</div><!-- /-box -->
+			</div>
+		</div>
+	</div><!-- /flow-day -->
+
+	<div class="section section-annual-events" id="tab2">
+		<div class="container">
+			<h3 class="ae-title">
+				<img src="img/life/title2.png" alt="年間行事" class="pc-only">
+				<img src="img/life/sp/title2.png" alt="年間行事" class="sp-only img-responsive">
+			</h3>
+			<div class="ae-box">
+				<div class="ae-box-txt">
+					<table>					
+						<tbody>
+							<tr>
+								<td>
+									<img src="img/life/11.png" alt="４月" class="pc-only">
+									<img src="img/life/sp/11.png" alt="４月" class="sp-only">
+								</td>
+								<td>
+									<p>入園式</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/life/12.png" alt="5月" class="pc-only">
+									<img src="img/life/sp/12.png" alt="5月" class="sp-only">
+								</td>
+								<td>
+									<p>こどもの日の集い<br>母と子の集い<br>園外保育（柏の宮公園）</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/life/13.png" alt="6月" class="pc-only">
+									<img src="img/life/sp/13.png" alt="6月" class="sp-only">
+								</td>
+								<td>
+									<p>父と子の集い<br>ふれあい動物</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/life/14.png" alt="7月" class="pc-only">
+									<img src="img/life/sp/14.png" alt="7月" class="sp-only">
+								</td>
+								<td>
+									<p>七夕の集い<br>おみせやさんごっこ<br>お泊り保育（年長児）<br>夏期保育（スイカ割り、プール遊び）<br>夏期自由登園<br>夕涼み会</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/life/15.png" alt="8月" class="pc-only">
+									<img src="img/life/sp/15.png" alt="8月" class="sp-only">
+								</td>
+								<td>
+									<p>夏期保育（フィンガーペイント・プールあそび）<br>夏期自由登園</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/life/16.png" alt="9月" class="pc-only">
+									<img src="img/life/sp/16.png" alt="9月" class="sp-only">
+								</td>
+								<td>
+									<p>祭礼（熊野神社のお祭り）</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/life/17.png" alt="10月" class="pc-only">
+									<img src="img/life/sp/17.png" alt="10月" class="sp-only">
+								</td>
+								<td>
+									<p>運動会<br>園外保育</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/life/18.png" alt="11月" class="pc-only">
+									<img src="img/life/sp/18.png" alt="11月" class="sp-only">
+								</td>
+								<td>
+									<p>作品展</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/life/19.png" alt="12月" class="pc-only">
+									<img src="img/life/sp/19.png" alt="12月" class="sp-only">
+								</td>
+								<td>
+									<p>おちばたき<br>すもう大会<br>もちつき<br>おたのしみ会<br>冬期自由登園</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/life/20.png" alt="1月" class="pc-only">
+									<img src="img/life/sp/20.png" alt="1月" class="sp-only">
+								</td>
+								<td>
+									<p>観劇会</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/life/21.png" alt="2月" class="pc-only">
+									<img src="img/life/sp/21.png" alt="2月" class="sp-only">
+								</td>
+								<td>
+									<p>おゆうぎ会<br>おわかれ遠足・ディズニーランド（年長児）</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/life/22.png" alt="3月" class="pc-only">
+									<img src="img/life/sp/22.png" alt="3月" class="sp-only">
+								</td>
+								<td>
+									<p>マラソン大会<br>おわかれの集い<br>卒園式</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/life/23.png" alt="その他" class="pc-only">
+									<img src="img/life/sp/23.png" alt="その他" class="sp-only">
+								</td>
+								<td>
+									<p>神社参拝…毎月１日・１５日<br>身体測定…奇数月<br>お誕生日会…毎月最終水曜日（誕生児の保護者も参加）</p>
+								</td>
+							</tr>
+						</tbody>						
+					</table>
+				</div>
+				<div class="ae-box-img pc-only">
+					<img src="img/life/10.png" alt="年間行事">
+				</div>
+			</div>
+			<div class="ae-gallery">
+				<h4 class="gallery-title">
+					<img src="img/life/sub-title2.png" alt="ギャラリー" class="pc-only">
+					<img src="img/life/sp/sub-title2.png" alt="ギャラリー" class="sp-only">
+				</h4>
+				<p class="gallery-note">※写真をクリックすると大きくなります。</p>
+				[showlifegallery]
+			</div>
+		</div>
+	</div><!-- /annual-events -->
+
+	<div class="section section-classroom" id="tab3">
+		<div class="container">
+			<h3 class="c-title">
+				<img src="img/life/title3.png" alt="課外教室" class="pc-only">
+				<img src="img/life/sp/title3.png" alt="課外教室" class="sp-only img-responsive">
+			</h3>
+			<div class="c-box">
+				<div class="c-box-img">
+					<img src="img/life/42.png" alt="課外教室" class="pc-only">
+					<img src="img/life/sp/42.png" alt="課外教室" class="sp-only img-responsive">
+				</div>
+				<div class="c-box-txt">
+					<!-- <label>☆コスモ・スポーツクラブ（幼児活動研究会）<br>対象…年少児～小学生</label>
+					<label>☆くまの・サッカークラブ（幼稚園）<br>対象…年中児・年長児・小学生</label> -->
+					<label>〖くまの・サッカークラブ（幼稚園）〗<br>・対象…年中児（水曜日　50分間）・年長児<br>（木曜日　50分間）・小学生（水・木・金曜日　90分間）※園児クラスは、在園児のみ。小学生は、卒園児以外の方でも入会できます<br>・場所…幼稚園・園庭（雨天時は、保育室）<br>サッカーを通して“げんき・ゆうき・こんき”を培い、体を動かす喜びと楽しさを知り、心身ともにたくましく、サッカーで成長できる指導を心掛けています。<br>園児も小学生も、男の子も女の子も、サッカーを楽しみ、サッカーが大好きです！</label>
+					<label>〖コスモ・スポーツクラブ（幼児活動研究会）〗<br>・対象…年少児～小学生（火曜日）<br>・場所…幼稚園</label>		
+				</div>
+			</div>
+		</div>
+	</div><!-- /classroom -->
+</div><!-- page-life -->

@@ -1,0 +1,129 @@
+/**********
+work-block
+**********/
+#work-block{
+    padding-top: 54px;
+}
+#search-work {
+    > .row {
+        background: #d2d2d2;
+        > div {
+            > .bg-inner {
+                background: #fff;
+                box-shadow: 0px 0px 4px 1px #929292;
+                box-sizing: border-box;
+                padding: 10px;
+            }
+        }
+        > .search-byTags{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        > .search-another{
+            @extend .search-byTags;
+            padding-left: 0;
+            .search-byKeys {
+                margin-bottom: 10px;
+                form {
+                    .input-group {
+                        // box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(181, 181, 181, 0.6);
+                        #keyword{
+                            border-right: none;
+                            &:focus{
+                                box-shadow: none;
+                                -webkit-box-shadow: none;
+                            }
+                        }
+                        #btnSearch{
+                            border-left: none;
+                            text-indent: -9999px;
+                            background: url("../images/icon_search.png") no-repeat center transparent;
+                            width: 50px;
+                        }
+                    }
+                }
+            }
+            .search-byPlaces {
+
+            }
+        }
+        .title-search{
+            background-image: url("../images/icon_title_work.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-color: transparent;
+            padding: 10px 0 10px 25px;
+            margin-top: 0;
+            margin-bottom: 7px;
+            color: #4d4e4d;
+        }
+        .tags-list{
+            li {
+                display: inline-block;
+                width: 49%;
+                margin-bottom: 5px;
+                &:nth-child(even) {
+                    float: right;
+                }
+                > a {
+                    width: 100%;
+                    text-align: left;
+                    color: #4d4e4d;
+                    padding: 12px 20px;
+                    background:url("../images/icon_arrow_work.png") no-repeat 90% center transparent;
+                    font-weight: 500;
+                    padding: 17px 20px;
+                }
+            }
+        }
+    }
+}
+.topic-blo {
+    margin-left: -15px;
+    border-bottom: 1px solid #ccc;
+    font-weight: 700;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.advertiment-block{
+    padding-top: 31px;
+}
+.job-blo{
+    .job-element {
+        padding: 7px;
+        box-shadow: 0 0 4px 1px #929292;
+        margin-bottom: 10px;
+        .inner{
+            display: table;
+            width: 100%;
+            > div {
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .job-img{
+                width: 18%;
+            }
+            .job-content {
+                width: 70%;
+                .title-content{
+                    font-weight: 700;
+                    color: #4d4e4d;
+                }
+            }
+            .job-location {
+                vertical-align: top;
+                width: 12%;
+                .glyphicon{
+                    color: #5ec33c;
+                }
+            }
+        }
+    }
+    
+}
+/***********
+why-agent
+***********/
+#why-agent{
+    
+}

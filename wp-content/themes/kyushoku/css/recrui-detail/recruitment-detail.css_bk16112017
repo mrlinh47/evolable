@@ -1,0 +1,308 @@
+.wr-detail {
+    margin: 0 auto;
+    width: 100%; 
+    margin-bottom: 66px;
+}
+.wr-title {
+    margin: 0 auto;
+    width: 100%;
+    box-shadow: 0 0 28px -5px rgba(0, 0, 0, 0.3);
+    padding-top: 13px;
+    padding-bottom: 12px;
+    height: 80px;
+    background: #fff;
+}
+.wr-title.fixed {
+	width: 100%;
+	position: fixed;
+	z-index: 3;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+.wr-title .container {
+    margin: 0 auto;
+    border-left: 10px solid #5ec33c;
+    padding-top: 18px;
+    padding-left: 21px;
+    height: 100%;
+}
+.row-recrui-detail h3{
+	float: left;
+	margin: 0px;
+	color: #2f2f2f;
+	font-size: 18px;
+	font-weight: bold;
+	width: 70%;
+}
+.wr-btn-send-top {
+	float: right;
+
+	border: none;
+	margin-top: -22px;
+}
+.wr-btn-send-top img:hover{
+	opacity: 0.8;
+}
+.wr-btn-send-top a.btn-send-top {
+	display: block;
+	width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 58px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none !important;
+}
+.wr-btn-send-top-rs {
+	display: none;
+}
+/*----------------- CONTENT DETAIL --------------------*/
+.row-recrui-detail.title-rs {
+	display: none;
+}
+.container.content-detail {
+	padding-top: 29px;
+
+}
+.img-detail {
+	float: left;
+	margin-right: 69px;
+}
+
+.info-detail {
+	float: left;
+	font-size: 15px;
+	font-weight: 500;
+	color: #4d4e4d;
+	max-width: 42%;
+	width: 35%;
+}
+.info-detail div {
+	position: relative;
+	padding-left: 27px;
+	border-bottom: 1px solid #d5d5d5;
+	margin-top: 13px;
+}
+.info-detail .toogle-benefit {
+	padding-left: 0px;
+	border: none;
+}
+.info-detail .row-dt-1 {
+	
+}
+.row-dt-1:before, .row-dt-2:before, .row-dt-3:before, .row-dt-4:before {
+	content: "";
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	top: 0;
+}
+.row-dt-4 > p {
+	cursor: pointer;
+}
+.toogle-benefit {
+	display: none;
+}
+.row-dt-1:before {
+	width: 11px;
+	height: 17px;
+	left: 3px;
+	background: url('../../images/recruitment-detail/icon-loca.png') no-repeat;
+}
+.row-dt-2:before {
+	width: 17px;
+	height: 17px;
+	background: url('../../images/recruitment-detail/icon-dolla.png') no-repeat;
+}
+.row-dt-3:before {
+	width: 18px;
+	height: 18px;
+	background: url('../../images/recruitment-detail/ico-clock.png') no-repeat;
+}
+.row-dt-4:before {
+	width: 18px;
+	height: 20px;
+	background: url('../../images/recruitment-detail/ico-gift.png') no-repeat;
+	top: -2px;
+}
+.code-work {
+	float: right;
+	text-align: right;
+	color: #4e4e4e;
+	font-weight: 500;
+}
+.code-work span {
+	font-weight: bold;
+	font-size: 18px;
+	margin-left: 3px;
+}
+.code-work-rs, .code-work-rs-sm {
+	display: none;
+}
+/*-------------------------- CONTENT MAIN ---------------------*/
+.cate-wr-content {
+	margin-bottom: 10px;
+}
+.content-detail-main {
+	margin-top: 33px;
+}
+.box-detail-1 {
+	width: 100%;
+	background: #f0f0f0;
+	padding: 10px 12px 10px 31px;
+	position: relative;
+	cursor: pointer;
+}
+.cate-wr-content .cate-box-content {
+	display: none;
+	font-size: 15px !important;
+	zoom: 1 !important;
+	height: auto;
+	height: 100%;
+	min-height: 20px; 
+}
+.cate-wr-content-open .cate-box-content {
+	display: block;
+	font-size: 15px !important;
+	zoom: 1 !important;
+	-webkit-transform: scale(1,1);
+	-moz-transform: scale(1,1);
+	transform: scale(1,1);
+}
+
+.cate-wr-content-open .cate-box-content p{
+	display: inline-block;
+}
+
+.box-detail-1 .cate-box-title {
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;	
+	position: relative;
+	background: url('../../images/recruitment-detail/icon-toggle.png') right 8px center no-repeat;
+}
+.box-detail-1 .cate-box-title:hover {
+	background: url('../../images/recruitment-detail/icon-toggle-hv.png') right 8px center no-repeat;
+}
+.box-detail-1.active .cate-box-title {
+	background: url('../../images/recruitment-detail/icon-toggle-active.png') right 8px center no-repeat;
+	transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+}
+.box-detail-1.active .cate-box-title:hover {
+	background: url('../../images/recruitment-detail/icon-toggle-active-hv.png') right 8px center no-repeat;
+}
+.box-detail-1 .cate-box-title:before {
+	content: "";
+	position: absolute;
+	z-index: 2;
+	width: 6px;
+	height: 18px;
+	top: -2px;
+	left: -18px;
+	background: #5ec33c;
+}
+.box-detail-1 .cate-box-title h4{
+	text-transform: uppercase;
+	font-size: 15px;
+	margin: 0px;
+}
+.cate-box-content {
+	padding: 16px 31px;
+	padding-bottom: 6px;
+	color: #2f2f2f;
+	line-height: 25px;
+	font-weight: 500;
+	text-align: justify;
+}
+.wr-btn-send-bot {
+	margin: 0 auto;
+	margin-top: 48px;;
+	border: none;
+	float: none;
+}
+.wr-btn-send-bot img:hover {
+	opacity: 0.8;
+}
+.wr-btn-send-bot a.btn-send-bot {
+	display: block;
+	width: 100%;
+    height: 100%;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    font-size: 20px;
+    line-height: 70px;
+    text-decoration: none !important;
+    text-transform: uppercase;
+}
+
+
+/*---------------------- VIEW OTHER -------------------------*/
+.wr-list-other {
+	margin-bottom: 75px;
+}
+.wr-list-other .list-work {
+	margin: 0px;
+}
+.row-list-slider .list-work .list-work-item {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.row-list-slider .list-work .box-work {
+	box-shadow: 0 0 14px -1px rgba(0, 0, 0, 0.3);
+}
+.title-view-other {
+	margin: 0 auto;
+	width: 100%;
+	height: 55px;
+	background: #c6f4c3;
+	border-left: 10px solid #5ec33c;
+	margin-bottom: 39px;
+	padding-left: 12px;
+	padding-right: 10px;
+}
+.title-view-other h3 {
+	font-weight: bold;
+	font-size: 18px;
+	color: #2f2f2f;
+	line-height: 53px;
+	float: left;
+	margin: 0px;
+	display: block !important;
+	width: auto !important;
+}
+.title-view-other h3 a {
+	color: #2f2f2f;
+}
+.title-view-other h3 a:hover {
+	color: #ff9912;
+	text-decoration: none;
+}
+.more-other {
+	border: none;
+	float: right;
+	margin-top: 10px;
+}
+.more-other img:hover {
+	opacity: 0.8;
+}
+.more-other a.btn-more-other {
+	display: block;
+	width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.img-detail img{
+	max-width: 330px;
+}

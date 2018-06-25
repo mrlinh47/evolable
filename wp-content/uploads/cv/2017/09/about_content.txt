@@ -1,0 +1,244 @@
+<div id="page-about">
+	<div id="breadcrumbs">
+		<div class="container">		
+			<div class="breadcrumb-link">
+				<ol>
+					<li><a href="[url]">Home</a></li>
+					<li><span>当園について</span></li>
+				</ol>
+			</div>
+			<ul class="nav-tabs">
+				<li>
+					<a href="#anchor1"><img src="img/about/pc/tab1.png" alt="保育目標・方針"></a>
+				</li>
+				<li>
+					<a href="#anchor2"><img src="img/about/pc/tab2.png" alt="園長あいさつ"></a>
+				</li>
+				<li>
+					<a href="#anchor3"><img src="img/about/pc/tab3.png" alt="先生紹介"></a>
+				</li>
+				<li>
+					<a href="#anchor4"><img src="img/about/pc/tab4.png" alt="先生紹介"></a>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /breadcrumbs -->
+
+	<div class="banner-page sp-only">
+		<img src="img/about/sp/1.png" class="img-responsive">
+		<div class="container">
+			<ul class="nav-tabs">
+				<li>
+					<a href="#anchor1"><img src="img/about/sp/tab1.png" alt="保育目標・方針"></a>
+				</li>
+				<li>
+					<a href="#anchor2"><img src="img/about/sp/tab2.png" alt="園長あいさつ"></a>
+				</li>
+				<li>
+					<a href="#anchor3"><img src="img/about/sp/tab3.png" alt="先生紹介"></a>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /banner-page -->
+
+	<div class="section section-sumary first" id="anchor1">
+		<div class="container">
+			<div class="block">
+				<div class="block-title">
+					<h3 class="title-main">
+						<img src="img/about/pc/title-1.png" class="pc-only img-responsive" alt="園概要">
+						<img src="img/about/sp/title-1.png" class="sp-only img-responsive" alt="園概要">
+					</h3>
+				</div><!-- /block-title -->
+
+				<div class="block-content bg-quote">
+					<div class="block-text">
+						<p>遊びを通して一人ひとりの個性や創造力をのばし、『人の話をよく聞ける子』『物事をよく考える子』『自分の力で行動できる子』の育成を目指しています。 <br>また、体力づくりを通して出来ないことでも勇気をもって挑戦する『げんき・ゆうき・こんき』を培います。</p>
+					</div><!-- /block-text -->
+				</div><!-- /block-content -->
+			</div><!-- /block -->
+		</div><!-- /container -->
+	</div><!-- /section -->
+
+	<div class="section section-access" id="anchor2">
+		<div class="container">
+			<div class="block">
+				<div class="block-title">
+					<h3 class="title-main">
+						<img src="img/about/pc/title-2.png" class="pc-only img-responsive" alt="アクセス">
+						<img src="img/about/sp/title-2.png" class="sp-only img-responsive" alt="アクセス">
+					</h3>
+				</div><!-- /block-title -->
+
+				<div class="block-content">
+					<div class="row">
+						<div class="col col-image pc-right">
+							<div class="block-image">
+								<img src="img/about/pc/8.png" class="pc-only img-responsive" alt="">
+								<img src="img/about/sp/10.png" class="sp-only img-responsive" alt="">
+							</div><!-- /block-image -->
+						</div><!-- /col -->
+						<div class="col col-list">
+							<div class="box-list">
+								<ul class="box-list-table">
+									<li><span class="label label-green">運営法人</span><p>宗教法人　熊野神社</p></li>
+									<li><span class="label label-green">名称</span><p>くまの幼稚園</p></li>
+									<li><span class="label label-green">住所</span><p>〒168-0063<br class="pc-only">東京都杉並区和泉3-21-29</p></li>
+									<li><span class="label label-green">連絡先</span><p>TEL: 03-3323-0189</p></li>
+								</ul><!-- /box-list-table -->
+							</div><!-- /box-list -->
+						</div><!-- /col -->
+					</div><!-- /row -->
+					<div class="row">
+						<div class="block-map map-point">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1620.4997810066466!2d139.647033149847!3d35.677012777519806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe45978a739b32ced!2sKumano+Kindergarten!5e0!3m2!1sen!2s!4v1501232528057" height="418" allowfullscreen></iframe>
+						</div><!-- block-map -->
+						<div class="block-map-description">
+							<p>京王井の頭線　永福駅　徒歩約10分<br><small>※当園に駐車場はございません。お車でお越しの際は、付近のコインパーキングをご利用ください。</small></p>
+						</div><!-- /block-map-description -->
+					</div><!-- /row -->
+				</div><!-- /block-content -->
+			</div><!-- /block -->
+		</div><!-- /container -->
+	</div><!-- /section -->
+
+	<div class="section section-construction" id="anchor3">
+		<div class="container">
+			<div class="block">
+				<div class="block-title">
+					<h3 class="title-main">
+						<img src="img/about/pc/title-3.png" class="pc-only img-responsive" alt="施設紹介">
+						<img src="img/about/sp/title-3.png" class="sp-only img-responsive" alt="施設紹介">
+					</h3>
+				</div><!-- /block-title -->
+
+				<div class="block-content">
+					<div class="row">
+						<div class="col col-list">
+							<div class="box-list">
+								<ul class="box-list-table">
+									<li>
+										<div class="box-content">
+											<a href="[template_url]/img/about/pc/img-construction-1.jpg" data-fancybox="gallery" class="box-image">
+												<img src="img/about/pc/img-construction-1.jpg" alt="外観" class="pc-only img-responsive">
+												<img src="img/about/sp/img-construction-1.png" alt="外観" class="sp-only img-responsive">
+											</a>
+											<div class="box-text">
+												<a href="[template_url]/img/about/pc/img-construction-1.jpg" data-fancybox="gallery" class="link arrow-white">外観</a>
+											</div>
+										</div>									
+									</li>
+									<li>
+										<div class="box-content">
+											<a href="[template_url]/img/about/pc/img-construction-2.jpg" data-fancybox="gallery" class="box-image">
+												<img src="img/about/pc/img-construction-2.jpg" alt="園庭" class="pc-only img-responsive">
+												<img src="img/about/sp/img-construction-2.png" alt="園庭" class="sp-only img-responsive">
+											</a>
+											<div class="box-text">
+												<a href="[template_url]/img/about/pc/img-construction-2.jpg" data-fancybox="gallery" class="link arrow-white">園庭</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="box-content">
+											<a href="[template_url]/img/about/pc/img-construction-3.jpg" data-fancybox="gallery" class="box-image">
+												<img src="img/about/pc/img-construction-3.jpg" alt="保育室兼舞台" class="pc-only img-responsive">
+												<img src="img/about/sp/img-construction-3.png" alt="保育室兼舞台" class="sp-only img-responsive">
+											</a>
+											<div class="box-text">
+												<a href="[template_url]/img/about/pc/img-construction-3.jpg" data-fancybox="gallery" class="link arrow-white">保育室兼舞台</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="box-content">
+											<a href="[template_url]/img/about/pc/img-construction-4.jpg" data-fancybox="gallery" class="box-image">
+												<img src="img/about/pc/img-construction-4.jpg" alt="トイレ" class="pc-only img-responsive">
+												<img src="img/about/sp/img-construction-4.png" alt="トイレ" class="sp-only img-responsive">
+											</a>
+											<div class="box-text">
+												<a href="[template_url]/img/about/pc/img-construction-4.jpg" data-fancybox="gallery" class="link arrow-white">トイレ</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="box-content">
+											<a href="[template_url]/img/about/pc/img-construction-5.jpg" data-fancybox="gallery" class="box-image">
+												<img src="img/about/pc/img-construction-5.jpg" alt="遊具" class="pc-only img-responsive">
+												<img src="img/about/sp/img-construction-5.png" alt="遊具" class="sp-only img-responsive">
+											</a>
+											<div class="box-text">
+												<a href="[template_url]/img/about/pc/img-construction-5.jpg" data-fancybox="gallery" class="link arrow-white">遊具</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="box-content">
+											<a href="[template_url]/img/about/pc/img-construction-6.jpg" data-fancybox="gallery" class="box-image">
+												<img src="img/about/pc/img-construction-6.jpg" alt="遊具" class="pc-only img-responsive">
+												<img src="img/about/sp/img-construction-6.png" alt="遊具" class="sp-only img-responsive">
+											</a>
+											<div class="box-text">
+												<a href="[template_url]/img/about/pc/img-construction-6.jpg" data-fancybox="gallery" class="link arrow-white">遊具</a>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- /row -->
+				</div><!-- /block-content -->
+			</div><!-- /block -->
+		</div><!-- /container -->
+	</div><!-- /section -->
+
+	<div class="section section-uniforms" id="anchor4">
+		<div class="container">
+			<div class="block">
+				<div class="block-title">
+					<h3 class="title-main">
+						<img src="img/about/pc/title-4.png" class="pc-only img-responsive" alt="制服紹介">
+						<img src="img/about/sp/title-4.png" class="sp-only img-responsive" alt="制服紹介">
+					</h3>
+				</div><!-- /block-title -->
+
+				<div class="block-content">
+					<div class="row">
+						<div class="block-text">
+							<p>くまの幼稚園の制服の紹介です。なお、夏服は私服となります。平成30年度よりこちらの制服にかわります。（カバン、上ばき入れの変更はありません。）</p>
+						</div>
+						<div class="block-image">
+							<div class="row block-image-frame">
+								<div class="col col-left">
+									<img src="img/about/pc/25.png" class="pc-only img-responsive" alt="">
+									<img src="img/about/sp/uniforms-1.png" class="sp-only img-responsive" alt="保育スタイル">
+									<a>
+										<img src="img/about/pc/26.png" class="pc-only img-responsive" alt="保育スタイル">
+										<img src="img/about/sp/uniforms-titlte-1.png" class="sp-only img-responsive" alt="保育スタイル">
+									</a>
+								</div>
+								<div class="col col-right">
+									<img src="img/about/pc/27.png" class="pc-only img-responsive" alt="">
+									<img src="img/about/sp/uniforms-2.png" class="sp-only img-responsive" alt="通園スタイル">
+									<a>
+										<img src="img/about/pc/28.png" class="pc-only img-responsive" alt="通園スタイル">
+										<img src="img/about/sp/uniforms-title-2.png" class="sp-only img-responsive" alt="保育スタイル">
+									</a>
+								</div>
+							</div>
+
+							<p><small>※写真をクリックすると大きくなります。</small></p>
+						</div>
+					</div><!-- /row -->
+					<div class="row">
+						<div class="box-list">
+								<ul class="box-list-table">
+									[showaboutgallery]
+								</ul>
+							</div>
+					</div><!-- /row -->
+				</div><!-- /block-content -->
+			</div><!-- /block -->
+		</div><!-- /container -->
+	</div><!-- /section -->
+</div><!-- /page-about -->

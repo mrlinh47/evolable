@@ -1,0 +1,107 @@
+<!--.FOOTER -->
+		<footer id="nav-footer" class="container-fluid">
+		    <div class="footer-info">
+		        <div class="container">
+		            <div class="row pull-right top-page">
+		                <span>
+		                    <img src="<?php echo get_template_directory_uri(); ?>/images/icon_topPage.png" alt="Top" title="Goto Top page">
+		                </span>
+		            </div>
+		        </div>
+		    </div>
+		    <nav class="navbar navbar-default navbar-static-top navbar-footermenu">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-xs-12 col-sm-3 col-md-3">
+		                    <div class="footer-logo">
+		                        <a class="navbar-brand logo-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+		                            <img src="<?php echo get_template_directory_uri(); ?>/images/logo_footer.png" alt="Evolable Asia Agent" class="responsive">
+		                        </a>
+		                    </div>        
+		                </div>
+		                <div class="col-xs-12 col-sm-9 col-md-9">
+		                    <ul class="nav navbar-nav text-uppercase">
+		                        <li><a href="https://agent.evolable.asia/recruit/ja">ご転職をお考えの方</a></li>
+		                        <li><a href="https://agent.evolable.asia/recruit/ja/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bc/">インタビュー</a></li>
+		                        <li><a href="https://agent.evolable.asia/top/">採用をお考えの企業様</a></li>
+		                        <li><a href="https://agent.evolable.asia/top/company/">会社概要</a></li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </div>
+		    </nav>
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<p>Copyright EVOLABLE ASIA Co,. Ltd. All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+   	
+	    <script>
+	        ( jQuery )(function($) {
+	        	new WOW().init();
+
+	        	$(function() {
+	        		var owl = $('.list-work.owl-carousel');
+					owl.owlCarousel({
+						loop: true,
+						autoplay: true,
+						autoplayTimeout: 3000,
+						autoplayHoverPause: true,
+						smartSpeed:450,
+						responsive: {
+						  0: {
+						    items: 1,
+						    nav: false
+						  },
+						  502: {
+						    items: 2,
+						    nav: false,
+						    margin:20
+						  },		         
+						  992: {
+						    items: 3,
+						    nav: false,
+						    margin:20
+						  },
+						  1300: {
+						    items: 4,
+						    nav: true,
+						    margin:20
+						  }
+						}
+					});
+				});
+
+	          	$('.inner-content-div').slimScroll({
+					color: '#ff9912',
+					size: '5px',
+					height: '65px'
+				});
+				$('.box-map-sal').slimScroll({
+					color: '#ff9912',
+					size: '5px',
+					height: '95px'
+				});
+
+				$(function() {
+					var owl = $('.list-banner.owl-carousel');
+		          	owl.owlCarousel({
+			          	items: 1,
+			            loop: true,
+			            autoplay: true,
+			            autoplayTimeout: 3000,
+			            autoplayHoverPause: true,
+			            smartSpeed:450,
+			            vav: true
+			        });
+				});
+	        });
+
+	    </script>
+
+	    <?php wp_footer(); ?>
+	</body>
+</html>

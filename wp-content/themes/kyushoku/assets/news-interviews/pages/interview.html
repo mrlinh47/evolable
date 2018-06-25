@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+@@include('partials/header.html', {
+    "title" : "企業概要",
+    "fileStyle" : "css/interview.css",
+    "slickStyle" : "css/slick.css",
+    "slick-themeStyle" : "css/slick-theme.css"
+})
+<body>
+@@include('partials/menu.html', {
+    "active-page" : {
+        "menu1" : "",
+        "menu2" : "",
+        "menu3" : "",
+        "menu4" : "",
+        "menu5" : "",
+        "menu6" : "active",
+        "menu7" : ""
+    }
+})
+
+
+@@include('partials/interview.html')  
+
+@@include('partials/footer.html')
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/slick.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){		
+		$('.inter-list--interviewer, .inter-list--candidate').slick({
+		  dots: false,
+		  infinite: false,
+		  speed: 300,
+		  slidesToShow: 3,
+		  slidesToScroll: 1,
+		  responsive: [
+		    {
+		      breakpoint: 1024,
+		      settings: {
+		        slidesToShow: 3,
+		        slidesToScroll: 1,
+		        infinite: true,
+		        dots: false
+		      }
+		    },
+		    {
+		      breakpoint: 991,
+		      settings: {
+		        slidesToShow: 2,
+		        slidesToScroll: 1
+		      }
+		    },
+		    {
+		      breakpoint: 767,
+		      settings: {
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+		  ]
+		});
+	});
+</script>
+</body>
+</html>

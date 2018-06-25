@@ -1,0 +1,523 @@
+<?php
+
+/*
+ * This file is custom post type, custom taxonomy and custom fields
+ * definition file.
+ * 
+ * Exported from CPT UI & Advanced Custom Fields
+ */
+
+/* ---------------------------------------------------------------------------- */
+/* post type definitions */
+/* ---------------------------------------------------------------------------- */
+add_action('init', 'cptui_register_my_cpts');
+add_action('init', 'cptui_register_my_taxes');
+
+function cptui_register_my_cpts() {
+    $lang = "Jobs";
+    if(function_exists('qtranxf_getLanguage')){
+        if (qtranxf_getLanguage() == "ja"){
+            $lang = "求人情報";
+        } elseif (qtranxf_getLanguage() == "en"){
+            $lang = "Jobs";
+        } else {
+            $lang = "Tuyển dụng";
+        }
+    }
+
+    $labels = array(
+        "name" => $lang,
+        "singular_name" => "Jobs",
+    );
+
+    $args = array(
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "show_ui" => true,
+        "has_archive" => true,
+        "show_in_menu" => true,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "rewrite" => array("slug" => "jobs", "with_front" => true),
+        "query_var" => true,
+        "menu_position" => 32,
+        "menu_icon" => get_template_directory_uri() . '/images/ad-ico/h7.png',
+        "supports" => array("title"),
+    );
+    register_post_type("jobs", $args);
+
+    /**
+     * @author HangVo
+     * @date: 2016/04/01
+     * @functuion: add post-type: news
+     */
+    $labels = array(
+        "name" => "News",
+        "singular_name" => "News",
+    );
+
+    $args = array(
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "show_ui" => true,
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "rewrite" => array("slug" => "news", "with_front" => true),
+        "query_var" => true,
+        "supports" => array("title", "editor","thumbnail"),
+    );
+    register_post_type("news", $args);
+
+    // // taxonomy
+    // $labels_taxonomy = array(
+    //     'name' => __( 'カテゴリー', 'eaa' ),  
+    //     'menu_name' => __( 'カテゴリー', 'eaa' ),
+    //     'edit_item' => __( 'カテゴリー編集', 'eaa' ),
+    //     'add_new_item' => __( 'カテゴリーの追加', 'eaa' ),
+    //     'search_items' => __( 'カテゴリー検索', 'eaa' ),
+    //     'not_found' => __( 'カテゴリーなし', 'eaa' )
+    // );
+
+    // $args_taxonomy = array(
+    //     'labels' => $labels_taxonomy,
+    //     'public' => true,
+    //     'hierarchical' => true,
+    //     'rewrite' => array( 'slug' => 'category', 'with_front' => false ),
+    //     'show_admin_column' => true
+    // );
+
+    // register_taxonomy( 'info_category', 'info', $args_taxonomy );
+// End of cptui_register_my_cpts()
+}
+
+/* ---------------------------------------------------------------------------- */
+/* taxonomy definitions */
+/* ---------------------------------------------------------------------------- */
+
+function cptui_register_my_taxes() {
+    $labels = array(
+        "name" => "Job Locations",
+        "label" => "Job Locations",
+    );
+
+    $args = array(
+        "labels" => $labels,
+        "hierarchical" => true,
+        "label" => "Job Locations",
+        "show_ui" => true,
+        "query_var" => true,
+        "rewrite" => array('slug' => 'job-location', 'with_front' => true),
+        "show_admin_column" => false,
+    );
+    register_taxonomy("job-location", array("jobs"), $args);
+
+    $labels = array(
+        "name" => "Job Positions",
+        "label" => "Job Positions",
+    );
+
+    $args = array(
+        "labels" => $labels,
+        "hierarchical" => true,
+        "label" => "Job Positions",
+        "show_ui" => true,
+        "query_var" => true,
+        "rewrite" => array('slug' => 'job-position', 'with_front' => true),
+        "show_admin_column" => false,
+    );
+    register_taxonomy("job-position", array("jobs"), $args);
+
+    $labels = array(
+        "name" => "Job Skills",
+        "label" => "Job Skills",
+    );
+
+    $args = array(
+        "labels" => $labels,
+        "hierarchical" => true,
+        "label" => "Job Skills",
+        "show_ui" => true,
+        "query_var" => true,
+        "rewrite" => array('slug' => 'job-skill', 'with_front' => true),
+        "show_admin_column" => false,
+    );
+    register_taxonomy("job-skill", array("jobs"), $args);
+}
+
+/* ---------------------------------------------------------------------------- */
+/* custom fields definitions */
+/* ---------------------------------------------------------------------------- */
+if (function_exists("register_field_group")) {
+
+    register_field_group(array(
+        'id' => 'acf_jobs',
+        'title' => 'Jobs',
+        'fields' => array(
+            array (
+                    'key' => 'field_5701c4e0ca8a9',
+                    'label' => 'Sub Title',
+                    'name' => 'sub_title',
+                    'type' => 'text',
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'formatting' => 'none',
+                    'maxlength' => '',
+            ),
+            array (
+                    'key' => 'field_5701c556ca8aa',
+                    'label' => '求人No',
+                    'name' => 'job_no',
+                    'type' => 'text',
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'formatting' => 'none',
+                    'maxlength' => '',
+            ),
+            array (
+                    'key' => 'field_5701c57fca8ab',
+                    'label' => 'Min Salary',
+                    'name' => 'min_salary',
+                    'type' => 'text',
+                    'default_value' => 0,
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '万円',
+                    'formatting' => 'none',
+                    'maxlength' => '',
+            ),
+            array (
+                    'key' => 'field_5701c63fca8ad',
+                    'label' => 'Default Image (Japanese)',
+                    'name' => 'default_image',
+                    'type' => 'image',
+                    'save_format' => 'url',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'all',
+            ),
+            array (
+                    'key' => 'field_5704778d8d061',
+                    'label' => 'Detail Image (Japanese)',
+                    'name' => 'detail_image',
+                    'type' => 'image',
+                    'save_format' => 'url',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'all',
+            ),
+            array (
+                    'key' => 'field_5701c63fca8adenthumnail02',
+                    'label' => 'Default Image (English)',
+                    'name' => 'default_image_en',
+                    'type' => 'image',
+                    'save_format' => 'url',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'all',
+            ),
+            array (
+                    'key' => 'field_5704778d8d061endetail02',
+                    'label' => 'Detail Image (English)',
+                    'name' => 'detail_image_en',
+                    'type' => 'image',
+                    'save_format' => 'url',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'all',
+            ),
+            array (
+                    'key' => 'field_5701c63fca8advithumnail03',
+                    'label' => 'Default Image (Vietnamese)',
+                    'name' => 'default_image_vi',
+                    'type' => 'image',
+                    'save_format' => 'url',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'all',
+            ),
+            array (
+                    'key' => 'field_5704778d8d061videtail02',
+                    'label' => 'Detail Image (Vietnamese)',
+                    'name' => 'detail_image_vi',
+                    'type' => 'image',
+                    'save_format' => 'url',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'all',
+            ),
+            array (
+                    'key' => 'field_5701c6a3ca8ae',
+                    'label' => '事業内容',
+                    'name' => 'content',
+                    'type' => 'textarea',
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'maxlength' => '',
+                    'rows' => 2,
+                    'formatting' => 'br',
+            ),
+            array (
+                    'key' => 'field_5701c6a5ca8af',
+                    'label' => '仕事内容',
+                    'name' => 'detail',
+                    'type' => 'textarea',
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'maxlength' => '',
+                    'rows' => 2,
+                    'formatting' => 'br',
+            ),
+            array (
+                    'key' => 'field_5701c6a7ca8b0',
+                    'label' => '必要経験',
+                    'name' => 'experience',
+                    'type' => 'textarea',
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'maxlength' => '',
+                    'rows' => 2,
+                    'formatting' => 'br',
+            ),
+            array (
+                    'key' => 'field_570339828af55',
+                    'label' => '想定給与',
+                    'name' => 'salary',
+                    'type' => 'textarea',
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'maxlength' => '',
+                    'rows' => 2,
+                    'formatting' => 'br',
+            ),
+            array (
+                'key' => 'field_59b7868095ed7',
+                'label' => '勤務時間',
+                'name' => 'timework',
+                'type' => 'textarea',
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => 2,
+                'formatting' => 'br',
+            ),
+            array (
+                'key' => 'field_59b782bd55656',
+                'label' => '福利厚生',
+                'name' => 'benefits',
+                'type' => 'textarea',
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => 2,
+                'formatting' => 'br',
+            ),
+            array (
+                'key' => 'field_59b7832710249',
+                'label' => '休日/休暇',
+                'name' => 'holiday',
+                'type' => 'textarea',
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => 2,
+                'formatting' => 'br',
+            ),
+            array (
+                    'key' => 'field_570339e48af56',
+                    'label' => '勤務地',
+                    'name' => 'location',
+                    'type' => 'textarea',
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'maxlength' => '',
+                    'rows' => 2,
+                    'formatting' => 'br',
+            ),
+            array (
+                    'key' => 'field_57033a108af57',
+                    'label' => 'Description',
+                    'name' => 'description',
+                    'type' => 'qtranslate_wysiwyg',
+                    'default_value' => '',
+                    'toolbar' => 'full',
+                    'media_upload' => 'yes',
+            )
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'jobs',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array(
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array(
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+
+    /*register_field_group(array(
+        'id' => 'acf_banner',
+        'title' => 'Banner',
+        'fields' => array(
+            array(
+                'key' => 'field_56c3f59c293e0',
+                'label' => 'Images',
+                'name' => 'images',
+                'type' => 'repeater',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_56c3f5b2293e1',
+                        'label' => 'Image',
+                        'name' => 'image',
+                        'type' => 'image',
+                        'column_width' => '',
+                        'save_format' => 'object',
+                        'preview_size' => 'thumbnail',
+                        'library' => 'all',
+                    ),
+                    array(
+                        'key' => 'field_56c3f70ab5f8e',
+                        'label' => 'Url',
+                        'name' => 'url',
+                        'type' => 'text',
+                        'column_width' => '',
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'formatting' => 'none',
+                        'maxlength' => '',
+                    ),
+                ),
+                'row_min' => '',
+                'row_limit' => '',
+                'layout' => 'table',
+                'button_label' => 'Add Row',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'banner',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array(
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array(
+            ),
+        ),
+        'menu_order' => 0,
+    ));*/
+
+    // register_field_group(array(
+    //     'id' => 'acf_news',
+    //     'title' => 'News',
+    //     'fields' => array(
+    //         array(
+    //             'key' => 'field_56fdf87feb669',
+    //             'label' => 'Image',
+    //             'name' => 'image',
+    //             'type' => 'image',
+    //             'save_format' => 'url',
+    //             'preview_size' => 'thumbnail',
+    //             'library' => 'all',
+    //         ),
+    //         array(
+    //             'key' => 'field_56fdf8bfeb66a',
+    //             'label' => 'url',
+    //             'name' => 'url',
+    //             'type' => 'text',
+    //             'default_value' => '',
+    //             'placeholder' => '',
+    //             'prepend' => '',
+    //             'append' => '',
+    //             'formatting' => 'none',
+    //             'maxlength' => '',
+    //         ),
+    //         array(
+    //             'key' => 'field_55da7a80ad0f8',
+    //             'label' => 'Content',
+    //             'name' => 'content',
+    //             'type' => 'wysiwyg',
+    //             'default_value' => '',
+    //             'toolbar' => 'full',
+    //             'media_upload' => 'yes',
+    //         ),
+    //     ),
+    //     'location' => array(
+    //         array(
+    //             array(
+    //                 'param' => 'post_type',
+    //                 'operator' => '==',
+    //                 'value' => 'news',
+    //                 'order_no' => 0,
+    //                 'group_no' => 0,
+    //             ),
+    //         ),
+    //     ),
+    //     'options' => array(
+    //         'position' => 'normal',
+    //         'layout' => 'no_box',
+    //         'hide_on_screen' => array(
+    //         ),
+    //     ),
+    //     'menu_order' => 0,
+    // ));
+
+  
+
+  add_action( 'add_meta_boxes', 'so_custom_meta_box' );
+
+function so_custom_meta_box($post){
+    add_meta_box('so_meta_box', 'CV expired', 'custom_element_grid_class_meta_box', $post->post_type, 'normal' , 'high');
+}
+
+add_action('save_post', 'so_save_metabox');
+
+function so_save_metabox(){ 
+    global $post;
+    if(isset($_POST["custom_element_grid_class"])){
+         //UPDATE: 
+        $meta_element_class = $_POST['custom_element_grid_class'];
+        //END OF UPDATE
+
+        update_post_meta($post->ID, 'custom_element_grid_class_meta_box', $meta_element_class);
+        //print_r($_POST);
+    }
+}
+
+function custom_element_grid_class_meta_box($post){
+    $meta_element_class = get_post_meta($post->ID, 'custom_element_grid_class_meta_box', true); //true ensures you get just one value instead of an array
+    ?>  
+
+    <select name="custom_element_grid_class" id="custom_element_grid_class">
+      <option value="No" <?php selected( $meta_element_class, 'No' ); ?>>No</option>
+      <option value="recruitment ended" <?php selected( $meta_element_class, 'recruitment ended' ); ?>>recruitment ended</option>
+    </select>
+    <?php
+}
+
+
+
+
+}    

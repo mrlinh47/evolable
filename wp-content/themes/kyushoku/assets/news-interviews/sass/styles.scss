@@ -1,0 +1,17 @@
+// Import Bootstrap Compass integration
+@import "bootstrap-compass";
+
+// Import custom Bootstrap variables
+@import "bootstrap-variables";
+
+// Import Bootstrap for Sass
+@import "bootstrap";
+
+// Import font style for web (Roboto for VI and EN, Hiragino Kaku for JP)
+@import "_custom_font_styles.scss";
+@import "_custom_font_jp.scss";
+
+// Import custom style for web
+@import "_custom_styles.scss";
+@import "_common.scss";
+@import "_content_index_styles.scss";

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+@@include('partials/header.html', {
+    "title" : "ブログ・ニュース",
+    "fileStyle" : "css/blog-news.css"
+})
+<body>
+@@include('partials/menu.html', {
+    "active-page" : {
+        "menu1" : "",
+        "menu2" : "",
+        "menu3" : "",
+        "menu4" : "",
+        "menu5" : "active",
+        "menu6" : "",
+        "menu7" : ""
+    }
+})
+
+
+@@include('partials/blog-news.html')  
+
+@@include('partials/footer.html')
+</body>
+</html>

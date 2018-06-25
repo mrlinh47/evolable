@@ -1,0 +1,27 @@
+@charset 'utf-8';
+h1, .h1, h2, .h2, h3, .h3{
+	margin: 0;
+}
+
+.ttl-commom{
+	h2{
+		margin-bottom: 50px;
+		font-size: 30px;
+		color: #4d4e4d;
+		font-weight: 500;
+		line-height: 31px;
+		background: url(../images/common/bg_tt_line.png) left center no-repeat;
+		padding-left: 20px;
+		letter-spacing: 1px;
+		padding-top:4px;			
+	}
+}
+
+@media (max-width: 767px) {
+	.ttl-commom{
+		h2{
+			margin-bottom: 20px;
+			font-size: 25px;
+		}
+	}
+}

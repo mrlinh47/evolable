@@ -1,0 +1,419 @@
+<?php
+/*
+Plugin Name: Contact form kigyo
+Description: soncc2010@gmail.com
+Version:     1.0
+Author:      soncc2010@gmail.com
+Author URI:  http://server1.evolable.asia:8084/kigyo/
+License:     20102010
+*/
+global $contact_form_kigyo_db_version;
+$contact_form_kigyo_db_version = '1.1'; // version changed from 1.0 to 1.1
+/**
+ * register_activation_hook implementation
+ *
+ * will be called when user activates plugin first time
+ * must create needed database tables
+ */
+function contact_form_kigyo_install()
+{
+    global $wpdb;
+    global $contact_form_kigyo_db_version;
+    $table_name = $wpdb->prefix . 'contact_form_kigyo'; 
+    $sql = "CREATE TABLE " . $table_name . " (
+          id int(11) NOT NULL AUTO_INCREMENT,
+          name VARCHAR(255) NOT NULL,
+          company_name VARCHAR(255) NOT NULL,
+          department VARCHAR(255) NOT NULL,
+          email VARCHAR(255) NOT NULL,
+          inquiry_content TEXT NULL,
+          detail_request TEXT NULL,
+          phone VARCHAR(255) NULL,
+          other_content TEXT NULL,
+          date  DATETIME NOT NULL DEFAULT '0000-00-00',
+          PRIMARY KEY  (id)
+    );";
+    
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+    dbDelta($sql);
+    add_option('contact_form_kigyo_db_version', $contact_form_kigyo_db_version);
+    $installed_ver = get_option('contact_form_kigyo_db_version');
+    if ($installed_ver != $contact_form_kigyo_db_version) {
+        $sql = "CREATE TABLE " . $table_name . " (
+          id int(11) NOT NULL AUTO_INCREMENT,
+          name VARCHAR(255) NOT NULL,
+          company_name VARCHAR(255) NOT NULL,
+          department VARCHAR(255) NOT NULL,
+          email VARCHAR(255) NOT NULL,
+          inquiry_content TEXT NULL,
+          detail_request TEXT NULL,
+          phone VARCHAR(255) NULL,
+          other_content TEXT NULL,
+          date  DATETIME NOT NULL DEFAULT '0000-00-00',
+          PRIMARY KEY  (id)
+    );";
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        dbDelta($sql);
+        update_option('contact_form_kigyo_db_version', $contact_form_kigyo_db_version);
+    }
+}
+register_activation_hook(__FILE__, 'contact_form_kigyo_install');
+
+
+function contact_form_kigyo_update_db_check()
+{
+    global $contact_form_kigyo_db_version;
+    if (get_site_option('contact_form_kigyo_db_version') != $contact_form_kigyo_db_version) {
+        contact_form_kigyo_install();
+    }
+}
+add_action('plugins_loaded', 'contact_form_kigyo_update_db_check');
+
+if (!class_exists('WP_List_Table')) {
+    require_once(ABSPATH . 'wp-admin/includes/class-wp-list-table.php');
+}
+class Custom_Table_kigyo_List_Table extends WP_List_Table
+{
+    /**
+     * [REQUIRED] You must declare constructor and give some basic params
+     */
+    function __construct()
+    {
+        global $status, $page;
+        parent::__construct(array(
+            'singular' => 'Contact form Kiyo',
+            'plural' => 'contact_form_kigyo',
+        ));
+    }
+    function column_default($item, $column_name)
+    {
+        return $item[$column_name];
+    }
+    function column_name($item)
+    {
+       
+        $actions = array(
+            'edit' => sprintf('<a href="?page=contact_form_kigyo_form&id=%s">%s</a>', $item['id'], __('Detail', 'cltd_kigyo')),
+            'delete' => sprintf('<a href="?page=%s&action=delete&id=%s">%s</a>', $_REQUEST['page'], $item['id'], __('Delete', 'cltd_kigyo')),
+        );
+        return sprintf('%s %s',
+            $item['name'],
+            $this->row_actions($actions)
+        );
+    }
+    /**
+     * [REQUIRED] this is how checkbox column renders
+     *
+     * @param $item - row (key, value array)
+     * @return HTML
+     */
+    function column_cb($item)
+    {
+        return sprintf(
+            '<input type="checkbox" name="id[]" value="%s" />',
+            $item['id']
+        );
+    }
+    /**
+     * [REQUIRED] This method return columns to display in table
+     * you can skip columns that you do not want to show
+     * like content, or description
+     *
+     * @return array
+     */
+    function get_columns()
+    {
+        $columns = array(
+            'cb' => '<input type="checkbox" />', //Render a checkbox instead of text
+            'name' => __('Name', 'cltd_kigyo'),
+            'email' => __('Email', 'cltd_kigyo'),
+            'phone' => __('Phone', 'cltd_kigyo'),
+            'date' => __('Date', 'cltd_kigyo'),
+        );
+        return $columns;
+    }
+    /**
+     * [OPTIONAL] This method return columns that may be used to sort table
+     * all strings in array - is column names
+     * notice that true on name column means that its default sort
+     *
+     * @return array
+     */
+    function get_sortable_columns()
+    {
+        $sortable_columns = array(
+            'name' => array('name', true),
+            'email' => array('email', false),
+            'phone' => array('phone', false),
+            'date' => array('date', false),
+        );
+        return $sortable_columns;
+    }
+    /**
+     * [OPTIONAL] Return array of bult actions if has any
+     *
+     * @return array
+     */
+    function get_bulk_actions()
+    {
+        $actions = array(
+            'delete' => 'Delete'
+        );
+        return $actions;
+    }
+    /**
+     * [OPTIONAL] This method processes bulk actions
+     * it can be outside of class
+     * it can not use wp_redirect coz there is output already
+     * in this kigyo we are processing delete action
+     * message about successful deletion will be shown on page in next part
+     */
+    function process_bulk_action()
+    {
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'contact_form_kigyo'; // do not forget about tables prefix
+        if ('delete' === $this->current_action()) {
+            $ids = isset($_REQUEST['id']) ? $_REQUEST['id'] : array();
+            if (is_array($ids)) $ids = implode(',', $ids);
+            if (!empty($ids)) {
+                $wpdb->query("DELETE FROM $table_name WHERE id IN($ids)");
+            }
+        }
+    }
+    /**
+     * [REQUIRED] This is the most important method
+     *
+     * It will get rows from database and prepare them to be showed in table
+     */
+    function prepare_items()
+    {
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'contact_form_kigyo'; // do not forget about tables prefix
+        $per_page = 25; // constant, how much records will be shown per page
+        $columns = $this->get_columns();
+        $hidden = array();
+        $sortable = $this->get_sortable_columns();
+        // here we configure table headers, defined in our methods
+        $this->_column_headers = array($columns, $hidden, $sortable);
+        // [OPTIONAL] process bulk action if any
+        $this->process_bulk_action();
+        // will be used in pagination settings
+        $total_items = $wpdb->get_var("SELECT COUNT(id) FROM $table_name");
+        // prepare query params, as usual current page, order by and order direction
+        $paged = isset($_REQUEST['paged']) ? max(0, intval($_REQUEST['paged']) - 1) : 0;
+        $orderby = (isset($_REQUEST['orderby']) && in_array($_REQUEST['orderby'], array_keys($this->get_sortable_columns()))) ? $_REQUEST['orderby'] : 'name';
+        $order = (isset($_REQUEST['order']) && in_array($_REQUEST['order'], array('asc', 'desc'))) ? $_REQUEST['order'] : 'asc';
+        // [REQUIRED] define $items array
+        // notice that last argument is ARRAY_A, so we will retrieve array
+        $this->items = $wpdb->get_results($wpdb->prepare("SELECT * FROM $table_name ORDER BY $orderby $order LIMIT %d OFFSET %d", $per_page, $paged), ARRAY_A);
+        // [REQUIRED] configure pagination
+        $this->set_pagination_args(array(
+            'total_items' => $total_items, // total items defined above
+            'per_page' => $per_page, // per page constant defined at top of method
+            'total_pages' => ceil($total_items / $per_page) // calculate pages count
+        ));
+    }
+}
+
+function cltd_kigyo_admin_menu()
+{
+    add_menu_page(__('Contact form kigo', 'Contact form'), __('Contact form', 'contact_form_kigyo'), 'activate_plugins', 'contact_form_kigyo', 'cltd_form_kigyo_page_handler');
+    add_submenu_page('contact_form_kigyo', __('', 'contact_form_kigyo'), __('', 'contact_form_kigyo'), 'activate_plugins', 'contact_form_kigyo_form', 'cltd_contact_form_kigyo_handler');
+}
+add_action('admin_menu', 'cltd_kigyo_admin_menu');
+function cltd_form_kigyo_page_handler()
+{
+    global $wpdb;
+    $table = new Custom_Table_Kigyo_List_Table();
+    $table->prepare_items();
+    $message = '';
+    if ('delete' === $table->current_action()) {
+        $message = '<div class="updated below-h2" id="message"><p>' . sprintf(__('Items deleted: %d', 'cltd_kigyo'), count($_REQUEST['id'])) . '</p></div>';
+    }
+    ?>
+<div class="wrap">
+
+    <div class="icon32 icon32-posts-post" id="icon-edit"><br></div>
+    <h2><?php _e('Contact form kigyo', 'cltd_kigyo')?></h2>
+    <?php echo $message; ?>
+
+    <form id="persons-table" method="GET">
+        <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>"/>
+        <?php $table->display() ?>
+    </form>
+
+</div>
+<?php
+}
+
+function cltd_contact_form_kigyo_handler()
+{
+
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'contact_form_kigyo'; 
+    $message = '';
+    $notice = '';
+    $default = array(
+        'id' => 0,
+        'name' => '',
+        'email' => '',
+        'phone' => '',
+    );
+    $item = $default;
+    $item = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE id = %d", $_REQUEST['id']), ARRAY_A);
+    add_meta_box('persons_form_meta_box', 'お問い合わせはこちら', 'cltd_contact_form_kigyo_meta_box_handler', 'contact_form_kigyo', 'normal', 'default');
+    ?>
+<div class="wrap">
+    <div class="icon32 icon32-posts-post" id="icon-edit"><br></div>
+    <h2><?php _e('Contact form kigyo', 'cltd_kigyo')?> <a class="add-new-h2"
+                                href="<?php echo get_admin_url(get_current_blog_id(), 'admin.php?page=contact_form_kigyo');?>"><?php _e('Go back list', 'cltd_kigyo')?></a>
+    </h2>
+
+    <form id="form" method="POST">
+        <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(basename(__FILE__))?>"/>
+        <?php /* NOTICE: here we storing id to determine will be item added or updated */ ?>
+        <input type="hidden" name="id" value="<?php echo $item['id'] ?>"/>
+
+        <div class="metabox-holder" id="poststuff">
+            <div id="post-body">
+                <div id="post-body-content">
+                    <?php /* And here we call our custom meta box */ ?>
+                    <?php do_meta_boxes('contact_form_kigyo', 'normal', $item); ?>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<?php
+}
+/**
+ * This function renders our custom meta box
+ * $item is row
+ *
+ * @param $item
+ */
+function cltd_contact_form_kigyo_meta_box_handler($item){?>
+<style type="text/css">
+.table-contact-form{
+  border-collapse: collapse;
+  width:100%;
+}
+  .table-contact-form tbody>tr>th{
+    text-align: right;
+  }
+  .table-contact-form tbody>tr>th{
+    width: 100px;
+  }
+  .table-contact-form tbody>tr>th,
+  .table-contact-form tbody>tr>td{
+    padding:8px;
+    border-bottom: 1px dotted #f2f2f2;
+  }
+</style>
+<table class="table-contact-form">
+  <tbody>
+    <tr>
+      <th>日付:</th>
+      <td><?php echo $item['date'] ?></td>
+    </tr>
+    <tr>
+      <th>お名前:</th>
+      <td><?php echo $item['name'] ?></td>
+    </tr>
+    <tr>
+      <th>法人名:</th>
+      <td><?php echo $item['company_name'] ?></td>
+    </tr>
+    <tr>
+      <th>所属部署:</th>
+      <td><?php echo $item['department'] ?></td>
+    </tr>
+    <tr>
+      <th>E-mail:</th>
+      <td><?php echo $item['email'] ?></td>
+    </tr>
+    <tr>
+      <th>お問合せ内容:</th>
+      <td><?php echo $item['inquiry_content'] ?></td>
+    </tr>
+    <tr>
+      <th>ご依頼の詳細:</th>
+      <td><?php echo $item['detail_request'] ?></td>
+    </tr>
+    <tr>
+      <th>電話番号:</th>
+      <td><?php echo $item['phone'] ?></td>
+    </tr>
+    <tr>
+      <th>当社をどこで、<br>知りましたか？</th>
+      <td><?php echo $item['other_content'] ?></td>
+    </tr>
+  </tbody>
+</table>
+<?php
+}
+
+function cltd_contact_form_kigyo_languages()
+{
+    load_plugin_textdomain('cltd_contact_form_kigyo', false, dirname(plugin_basename(__FILE__)));
+}
+add_action('init', 'cltd_contact_form_kigyo_languages');
+function contact_form_kigyo_css() {
+   echo "<style type='text/css'>
+   .toplevel_page_contact_form_kigyo + .wp-submenu{
+    display:none;
+   }
+   #adminmenu .toplevel_page_contact_form_kigyo .dashicons-admin-generic:before{
+    content:'\\f466' !important;
+  }
+   </style>";
+}
+add_action('admin_head', 'contact_form_kigyo_css');
+add_action('wp_ajax_contact_frm_action', 'contact_frm');
+add_action('wp_ajax_nopriv_contact_frm_action', 'contact_frm');
+function contact_frm() {
+  $status = '';
+    if($_POST['name']!='' && $_POST['department']!='' && $_POST['company']!='' && $_POST['inquiry_content'] && $_POST['email']!=''){
+        $emailForm = 'agent@evolable.asia';
+        $name = $_POST["name"];
+        $company = $_POST["company"];
+        $department = $_POST["department"];
+        $email_cv = $_POST["email"];
+        $inquiry_content = $_POST["inquiry_content"];
+        $detail_request = $_POST["detail_request"];
+        $phone = $_POST["phone"];
+        $other_content = $_POST['other_content'];
+        $header .= "MIME-Version: 1.0\n";
+        $header .= "Content-Type: text/html; charset=utf-8\n";
+        $headers .= "From:" . $emailForm;
+        $message ='<table><tbody>';
+        $message .='<tr><th style="text-align:right">お名前:</th><td style="vertical-align:top;">'.$name.'</td></tr>';
+        $message .='<tr><th style="text-align:right">法人名:</th><td style="vertical-align:top;">'.$company.'</td></tr>';
+        $message .='<tr><th style="text-align:right">所属部署:</th><td style="vertical-align:top;">'.$department.'</td></tr>';
+        $message .='<tr><th style="text-align:right">Email:</th><td style="vertical-align:top;">'.$email_cv.'</td></tr>';
+        $message .='<tr><th style="text-align:right">お問合せ内容:</th><td style="vertical-align:top;">'.$inquiry_content.'</td></tr>';
+        $message .='<tr><th style="text-align:right">ご依頼の詳細:</th><td style="vertical-align:top;">'.$detail_request.'</td></tr>';
+        $message .='<tr><th style="text-align:right">電話番号:</th><td style="vertical-align:top;">'.$phone.'</td></tr>';
+        $message .='<tr><th style="text-align:right">当社をどこで、<br>知りましたか:</th><td style="vertical-align:top;">'.$other_content.'</td></tr>';
+        $message .='</tbody></table>';
+        $subject =$name.'_お問い合わせはこちら';
+        global $wpdb;
+        $table_name = $wpdb->prefix.'contact_form_kigyo';
+        $wpdb->insert($table_name, array(
+            'name' => $name,
+            'company_name' => $company,
+            'department' => $department,
+            'email' => $email_cv,
+            'inquiry_content' => $inquiry_content,
+            'detail_request' => $detail_request,
+            'phone' => $phone ,
+            'other_content' => $other_content,
+            'date' => current_time('mysql'),
+        ));
+        wp_mail($emailForm, $subject, $message, $header);
+        wp_mail($email_cv, $subject, $message, $header);
+        $status = 'true'; 
+        echo $status;
+        die();
+    }
+}

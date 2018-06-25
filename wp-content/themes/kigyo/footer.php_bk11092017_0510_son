@@ -1,0 +1,428 @@
+</div>
+<!-- /#Content -->
+
+<?php if(is_home() || is_page("top-page")){ ?>
+<!-- Modal Interviewer-->
+<div class="customer-modal">
+    <?php
+        $args = array(
+            'post_type'         => 'interviews',
+            'posts_per_page'    => -1,
+            'orderby'           => 'date',
+            'order'             => 'DESC',
+            'meta_query' => array(
+                array(
+                    'key'     => 'interviews-candidate',
+                    'value'   => 'customer',
+                ),
+            ),
+        );
+        $query = new WP_Query( $args );
+    ?>
+
+    <?php  if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+    <div class="modal modal-wide fade" id="myModal1" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body cf">
+                    <div class="modal-body__img">
+                        <?php if ( has_post_thumbnail( $post->ID ) ) {
+                                the_post_thumbnail("thumb-interview-index-md");
+                            } else {
+                                echo '<img src="' . get_template_directory_uri() .'/images/avatar_1.jpg" />';
+                            }
+                        ?>
+                    </div>
+                    <div class="modal-body__info">
+                        <div class="modal-body__txt"><?php the_content();?></div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-default btn-prev"></button>
+                <button type="button" class="btn-next"></button>
+                <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <?php endwhile; wp_reset_postdata(); endif; ?>
+</div>
+
+<!-- Modal Candidate-->
+<div class="candidate-modal">
+    <?php
+        $args = array(
+            'post_type'         => 'interviews',
+            'posts_per_page'    => -1,
+            'orderby'           => 'date',
+            'order'             => 'DESC',
+            'meta_query' => array(
+                array(
+                    'key'     => 'interviews-candidate',
+                    'value'   => 'candidate',
+                ),
+            ),
+        );
+
+        $query = new WP_Query( $args );
+    ?>
+    <?php  if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+    <div class="modal modal-wide fade" id="candidate-tab1" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body cf">
+                    <div class="modal-body__img">
+                        <?php if ( has_post_thumbnail( $post->ID ) ) {
+                                the_post_thumbnail("thumb-interview-index-md");
+                            } else {
+                                echo '<img src="' . get_template_directory_uri() .'/images/avatar_1.jpg" />';
+                            }
+                        ?>
+                    </div>
+                    <div class="modal-body__info">
+                        <div class="modal-body__txt"><?php the_content();?></div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-default btn-prev"></button>
+                <button type="button" class="btn-next"></button>
+                <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <?php endwhile; wp_reset_postdata(); endif; ?>
+</div>
+<?php } ?>
+<p class="form-btn form-btn--open form-btn-execute"><i class="fa fa-angle-double-up visible-xs"></i>お問い合わせはこちら<i class="fa fa-angle-double-up hidden-xs"></i></p>
+<div id="Contact-form-block">
+    <form class="contact-form">
+        <div class="contact-form__info">
+            <p class="form-btn form-btn--close">お問い合わせはこちら<i class="fa fa-angle-double-down hidden-xs"></i><img src="<?php echo get_template_directory_uri(); ?>/images/icon_close.png" alt="" class="visible-xs-inline"></p>
+            <div class="contact-form__content">
+                <div class="form-group cf">
+                    <label for="name">お名前<br><span class="form-group__require form-group__require--red">必須</span></label>
+                    <div class="form-group__des form-group__des--red">
+                        <input type="text" class="form-control" id="name" placeholder="例）〇〇 △△">
+                    </div>
+                </div>
+                <div class="form-group cf">
+                    <label for="name">法人名<br><span class="form-group__require form-group__require--red">必須</span></label>
+                    <div class="form-group__des form-group__des--red">
+                        <input type="text" class="form-control" id="name" placeholder="例）株式会社〇〇〇〇">
+                    </div>
+                </div>
+                <div class="form-group cf">
+                    <label for="department">所属部署<br><span class="form-group__require form-group__require--red">必須</span></label>
+                    <div class="form-group__des form-group__des--red">
+                        <input type="text" class="form-control" id="department" placeholder="例）〇〇部○○課">
+                    </div>
+                </div>
+                <div class="form-group cf">
+                    <label for="email">E-mail<br><span class="form-group__require form-group__require--red">必須</span></label>
+                    <div class="form-group__des form-group__des--red">
+                        <input type="text" class="form-control" id="email" placeholder="例）example@example.co.jp">
+                    </div>
+                </div>
+                <div class="form-group cf">
+                    <label for="inquiry">お問合せ内容<br><span class="form-group__require form-group__require--red">必須</span></label>
+                    <div class="form-group__des form-group__des--red">
+                        <div class="dropdown">
+                          <a href="javascript:void(0)" class="btn btn-default dropdown-toggle" id="selectBox" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="txtchange">▼下記からお選びください</span>
+                            <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="selectBox">  
+                            <li><a href="javascript:void(0)" data-value="▼下記からお選びください">▼下記からお選びください</a></li>                          
+                            <li><a href="javascript:void(0)" data-value="採用に関するお問い合わせ">採用に関するお問い合わせ</a></li>
+                            <li><a href="javascript:void(0)" data-value="グローバル人材の活用に関するお問い合わせ">グローバル人材の活用に関するお問い合わせ</a></li>
+                            <li><a href="javascript:void(0)" data-value="採用業務代行に関するお問い合わせ">採用業務代行に関するお問い合わせ</a></li>
+                            <li><a href="javascript:void(0)" data-value="人材定着・教育に関するお問い合わせ">人材定着・教育に関するお問い合わせ</a></li>
+                            <li><a href="javascript:void(0)" data-value="ベトナムオフショアに関するお問い合わせ">ベトナムオフショアに関するお問い合わせ</a></li>
+                            <li><a href="javascript:void(0)" data-value="開発業務委託に関するお問い合わせ">開発業務委託に関するお問い合わせ</a></li>
+                            <li><a href="javascript:void(0)" data-value="その他お問い合わせ">その他お問い合わせ</a></li>
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-group--nomar cf">
+                    <label for="detail-request">ご依頼の詳細<br><span class="form-group__require form-group__require--blue">必須</span></label>
+                    <div class="form-group__des form-group__des--red">
+                        <textarea class="form-control" id="detail-request" rows="3" placeholder="お問い合せ内容を詳しくお書きください。"></textarea>
+                    </div>
+                </div>
+                <div class="form-group form-group--nomar cf">
+                    <label for="phone">電話番号<br><span class="form-group__require form-group__require--blue">必須</span></label>
+                    <div class="form-group__des">
+                        <input type="text" class="form-control" id="phone" placeholder="例）0312345678">
+                    </div>
+                </div>
+                <div class="form-group form-group--nomar cf">
+                    <label for="whereweare">当社をどこで、<br>知りましたか？<br><span class="form-group__require form-group__require--blue">必須</span></label>
+                    <div class="form-group__des">
+                        <p class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox1" value="option1"> 知人の紹介
+                        </p>
+                        <p class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox2" value="option2"> 新聞
+                        </p>
+                        <p class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox3" value="option3"> 雑誌
+                        </p>
+                        <p class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox3" value="option3"> テレビ
+                        </p><br>
+                        <p class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox3" value="option3"> インターネット記事
+                        </p><br>
+                        <p class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox3" value="option3"> インターネット検索
+                        </p><br>
+                        <p class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox3" value="option3"> Facebook
+                        </p><br>
+                        <p class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox3" value="option3"> その他
+                        </p>
+
+                        <input type="text" class="form-control" id="" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group cf">
+                    <span class="form-group__ttl">【個人情報の取り扱いについて】</span>
+                    <textarea class="form-control privacy" disabled rows="4" >個人情報のお取り扱いについては、以下のテキストです。&#13;&#10;
+株式会社エボラブルアジアエージェント（以下「当社」といいます）は、人材ビジネスを営む企業の責任として、みなさまの個人情報を保護するために細心の注意をはらっています。具体的には、以下の方針に基づき、個人情報の管理・運用を行っていますので、当社の提供する情報サービス（以下、「本サービス」といいます）をご利用いただく前に必ずお読みください。本サービスにおいて個人情報を登録された場合に、当社の個人情報の取扱いに関して同意をいただいたものといたします。&#13;&#10;
+個人情報とは当社では、個人情報を以下のように定義しています。「個人に関する情報であって、当該情報に含まれる氏名、生年月日その他の記述、または個人別に付けられた番号、記号その他の符号、画像若しくは音声によって当該個人を識別できるもの（当該情報のみでは識別できないが、他の情報と容易に照合することができ、それにより当該個人を識別できるものを含む）をいう。」&#13;&#10;
+個人情報の取り扱いについて&#13;&#10;
+当社は本サービスをご利用になる方（以下「ユーザー」といいます）のプライバシーを尊重し、ユーザーの個人情報管理に細心の注意を払い、これを取り扱うものとします。&#13;&#10;
+個人情報収集の目的&#13;&#10;
+個人情報は、適切な求人情報のマッチング（条件に適合する求人情報の検索・表示）、ユーザーの承諾に基づく求人企業への応募・開示及びサービスの向上を行うことを目的として、必要な範囲内で収集しています。 利用目的は以下に定める通りです。&#13;&#10;
+(1)当社による本サービスにおけるユーザーへのサービス提供と サービス提供における個人認証。&#13;&#10;
+(2)ユーザーの承諾に基づく、本サービス利用企業への個人情報の開示。&#13;&#10;
+(3)本サービス内で行われる資料や商品の申し込み、アンケート、キャンペーン、モニター、懸賞等への応募、プレゼント発送等。&#13;&#10;
+(4)配送を委託している運送会社に対して、配送に必要な最低限の情報の開示。&#13;&#10;
+(5)取材対象者の募集。&#13;&#10;
+(6)本サービスで提供されるサービスを利用する際の作業簡素化。&#13;&#10;
+(7)本サービスの運営上必要な通知。&#13;&#10;
+(8)メールマガジンの送信。&#13;&#10;
+(9)マーケティング調査・分析、新たなサービスの開発。&#13;&#10;
+(10)本サービスに関するご意見、お問い合わせへの回答。&#13;&#10;
+個人情報を提供しなかった場合に生じる結果&#13;&#10;
+本サービスの個人情報の登録は、ユーザーの任意によるものとします。ただし、本サービスにおいてそれぞれ必要となる項目を入力しない場合は、各々のサービス提供を受けることができません。&#13;&#10;
+個人情報の開示・訂正・削除について&#13;&#10;
+ユーザーは当社に対し、登録した個人情報の開示をいつでも求めることができます。 個人情報の訂正・削除は下記メールアドレスまでご連絡ください。当社ですみやかに対応いたします。&#13;&#10;
+（連絡先： info@agent.evolable.asia）&#13;&#10;
+外部委託について&#13;&#10;
+個人情報の処理を外部に委託する際に、個人情報を預託する場合があります。委託処理を行う場合には、当社が定める基準を満たしていることを条件として委託先を選定し、機密保持契約を結んだ上で行います。&#13;&#10;
+外部リンクついて&#13;&#10;
+外部リンク先の情報に関しては、リンク先サイトのプライバシーポリシー等をご確認ください。&#13;&#10;
+個人情報の管理について&#13;&#10;
+個人情報への不当なアクセスまたは個人情報の紛失、破壊、改竄、漏洩などの危険に対して、技術面及び組織面において必要な安全対策を継続的に講じるよう努めています。&#13;&#10;
+本文書の変更
+当社は本文書を定期的に見直し、みなさまに予告することなく変更することがあります。</textarea>
+                </div>
+                <button class="form-btn form-btn--submit" data-toggle="modal" data-target="#myConfirm" type="button">同意して問合せる<img src="<?php echo get_template_directory_uri(); ?>/images/icon_btn.png" alt=""></button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!--MODAL CONFIRM-->
+<div id="myConfirm" class="container-fluid modal fade" role="dialog">
+    <div class="modal-dialog">    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">以下の内容がメールで送信されます。</h4>
+        </div>
+        <div class="modal-body">
+                <div class="panel-body body-apply-form">
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <div class="form-horizontal">
+                                <div class="row form-group">
+                                    <label class="col-full col-md-offset-1 col-xs-4 col-sm-4 col-md-4  required" for="nameInput">
+                                    <span>お名前</span>
+                                    </label>
+                                    <div class="col-xs-8 col-sm-8 col-md-7">
+                                       例）〇〇 △△
+                                    </div>
+                                </div>
+
+                                <div class="row form-group email-confirm">
+                                    <label class="col-full col-md-offset-1 col-xs-4 col-sm-4 col-md-4  required" for="branchInput">
+                                    <span>所属部署</span>
+                                    </label>
+                                    <div class="col-xs-8 col-sm-8 col-md-7">
+                                        例）〇〇部○○課
+                                    </div>
+                                    
+                                </div>
+                                <div class="row form-group have-fileupload">
+                                    <label class="col-full col-md-offset-1 col-xs-4 col-sm-4 col-md-4 " for="phoneInput">
+                                    <span>電話番号</span>
+                                    </label>
+                                    <div class="col-xs-8 col-sm-8 col-md-7">
+                                        例）0312345678
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-horizontal">
+                                <div class="row form-group">
+                                    <label class="col-full col-xs-4 col-sm-4 col-md-4 control-label required" for="corporateNameInput">
+                                    <span>法人名</span>
+                                    </label>
+                                    <div class="col-xs-8 col-sm-8 col-md-7">
+                                       例）株式会社〇〇〇〇
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="col-full col-xs-4 col-sm-4 col-md-4 control-label" for="emailInput"> <span>E-mail</span></label>
+                                    <div class="col-xs-8 col-sm-8 col-md-7">
+                                        例）example@example.co.jp
+                                    </div>
+                                </div>
+                                <div class="row form-group have-fileupload">
+                                    <label class="col-full col-xs-4 col-sm-4 col-md-4 control-label" for="whyyouknow">
+                                    <span>当社をどこで、<br>知りましたか？</span>
+                                    </label>
+                                    <div class="col-xs-8 col-sm-8 col-md-7">
+                                        インターネット検索<br>Facebook<br>その他 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-md-12 cmt-other">
+                            <div class="form-horizontal">
+                                <div class="row form-group form-group-comment">
+                                    <label class="col-full col-xs-12 col-sm-4 col-md-2 lb-comment" for="txt-content"><span>お問合せ内容</span></label>
+                                    <div class="col-xs-12 col-sm-8 col-md-10 ">
+                                        <p>xyz</p>
+                                    </div>
+                                    <label class="col-full col-xs-12 col-sm-4 col-md-2 lb-comment" for="txt-comment"><span>ご依頼の詳細</span></label>
+                                    <div class="col-xs-12 col-sm-8 col-md-10 ">
+                                        <p>であればご紹介させていただきます」と言われたのが今回の採用につながったきっかけです。 今回の採用が初めてだったので、生産性に関してはまだ発展途上ですが、間違いなく社内は和みよい影響を与えてくれていると思います。今後</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 box-confirm-btn">
+                            <div class="confirm-btn">
+                                  <button type="button"  data-target="#mySuccess"  data-toggle="modal" data-dismiss="modal" class="btn btn-default text-uppercase"><img src="<?php echo get_template_directory_uri(); ?>/images/common/form_contact/confirm-btn.png" alt=""></button>
+                            </div>
+                            <div class="confirm-btn">
+                                  <button type="button" data-toggle="modal"  data-dismiss="modal"  class="btn btn-default text-uppercase"><img src="<?php echo get_template_directory_uri(); ?>/images/common/form_contact/confirm-return.png" alt=""></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+              </div>
+      </div>
+      
+    </div>
+</div>
+<!--/MODAL CONFIRM-->
+
+<!--MODAL SUCCESS-->
+<div id="mySuccess" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">送信が完了いたしました。</h4>
+        </div>
+        <div class="modal-body">
+          <p>弊社で確認後、折り返しご連絡させていただきます。</p>
+        </div>
+        <div class="modal-footer">
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-default" ><img src="<?php echo get_template_directory_uri(); ?>/images/common/form_contact/close-popup.png" /></a>
+        </div>
+      </div>
+      
+    </div>
+</div>
+<!--/MODAL SUCCESS-->
+
+<nav class="navbar navbar-default navbar-static-top navbar-footermenu">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-3">
+                <div class="footer-logo">
+                    <a class="navbar-brand logo-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/logo_footer.png" alt="" class="responsive">
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <?php
+                    $menuFooter = array(
+                        'theme_location' => 'main-menu',
+                        'container' => 'ul',
+                        'container_class' => 'nav-footer',
+                        'menu_class'      => 'nav navbar-nav text-uppercase'
+                    );
+                    kigyo_getMenu($menuFooter);
+                ?>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<footer id="nav-footer">
+    <div class="footer-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-push-6">
+                    <?php
+                        $menuSecond = array(
+                            'theme_location' => 'second-menu',
+                            'container' => 'ul',
+                            'container_class' => 'nav-second',
+                            'menu_class'      => 'list-Fnav cf'
+                        );
+                        kigyo_getMenu($menuSecond);
+                    ?>
+                    <div class="social-block">
+                        <a href="https://www.facebook.com/EvolableAsiaAgent/" target="_blank" class="fb-ico"><img src="<?php echo get_template_directory_uri(); ?>/images/icon_facebook_footer.png" alt="Facebook" /></a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-sm-pull-6">
+                    <address>
+                        〒105-0012<br>
+                        東京都港区芝大門1-10-11　芝大門センタービル10F<br>
+                        10F Shiba Daimon Centre, 1-10-11 Shiba Daimon, Minato Ku, Tokyo, Japan<br>
+                        Zip: 105-0012<br>
+                        Tel: +81-3-6880-9083 - Fax: 03-6880-9201<br>
+                    </address>
+                </div>
+            </div>
+            <span class="top-page">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/icon_topPage.png" alt="Top" title="Goto Top page">
+            </span>
+        </div>
+    </div>
+
+    <div class="footer-copyright">
+        <div class="container">
+            <p class="text-center">
+                Copyright EVOLABLE ASIA AGENT Co,. Ltd. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+
+</footer>
+<?php wp_footer(); ?>
+</body>
+</html>

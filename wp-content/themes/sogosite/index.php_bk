@@ -1,0 +1,220 @@
+<?php
+// print_r(get_recruitment()); die();
+// $hostname = 'http://server1.evolable.asia:8084/agent/sogosite/kyushoku/api';
+get_header();
+global $post;
+?>
+<!--/.BANNER -->
+<div class="banner banner-pc">
+	<div class="list-banner owl-carousel owl-theme">
+		<?php 
+		$banners = get_banner();
+		if( $banners ) :
+			foreach( $banners as $post ) :
+				setup_postdata( $post ); ?>
+				<div class="box-banner"><img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"></div>
+			<?php
+			endforeach;
+			wp_reset_postdata();
+		endif;
+		?>
+	</div>
+</div>
+<div class="banner-sp">
+	<div class="list-banner owl-carousel owl-theme">
+		<div class="box-banner"><img src="<?php echo get_template_directory_uri(); ?>/images/banner-sp1.jpg" alt="" /></div>
+		<div class="box-banner"><img src="<?php echo get_template_directory_uri(); ?>/images/banner-sp2.jpg" alt="" /></div>
+		<div class="box-banner"><img src="<?php echo get_template_directory_uri(); ?>/images/banner-sp3.jpg" alt="" /></div>
+	</div>
+</div>
+<!--/.NEWS -->
+<div class="news-home container-fluid">
+	<div class="container">
+		<div class="row row-news-home">
+			<div data-wow-delay="0.4s" class="box-news-home box1-news-home wow animated fadeInLeft">
+				<div class="box-news-img">
+					<a href="http://server1.evolable.asia:8084/kyushoku/"><img src="<?php echo get_template_directory_uri(); ?>/images/image-1.png" alt="">
+						<div class="info-news-home">
+							<p>ご転職をお考えの<br />方はこちら</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div data-wow-delay="0.4s" class="box-news-home box2-news-home  wow animated fadeInRight">
+				<div class="box-news-img">
+					<a href="http://server1.evolable.asia:8084/kigyo/"><img src="<?php echo get_template_directory_uri(); ?>/images/image-2.png" alt="">
+						<div class="info-news-home">
+							<p>採用を考えている<br />企業様はこちら</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/.LIST - NEWS -->
+<div class="list-news-home container-fluid">
+	<div class="container">
+		<div class="row">
+			<h3>NEWS</h3>
+			<div class="box-list-news">
+				<?php
+				    global $switched;
+				    switch_to_blog(2);
+				     $link='';
+				?>
+				<?php
+				$news = get_news();
+				if( $news ) :
+					foreach( $news as $k => $v ) :
+					 $link = $v['link'];
+            	?>
+        		<dl class="wow animated fadeInLeft clearfix">
+					<dt>企業様向け</dt>
+					<dd><span class="news-calendar"><a href="<?php echo $link;?>"><?php echo $v['date']; ?></span><?php echo $v['title']; ?></a></dd>
+				</dl>
+				<?php
+					endforeach;
+				endif;
+				?>
+				<?php restore_current_blog();?>
+			</div>
+		</div>
+	</div>
+</div>	
+<!--/.LIST RESCRUIMENT -->
+<div class="recruiment-home container-fluid">
+	<div class="container">
+		<div class="row">
+			<h3>求人情報</h3>	
+            <div class="owl-carousel owl-theme list-work"><!--owl-carousel owl-theme list-work-->
+            	<?php
+            	global $switched;
+				    switch_to_blog(2);
+				    $args = array(
+						'posts_per_page' => 6,
+						'post_type' => 'recruitment',
+						'post_status' => 'publish'
+					);
+					$wp_query = new WP_Query( $args );
+					if( $wp_query->have_posts() ) : 
+					while( $wp_query->have_posts() ) :
+						$wp_query->the_post();
+						$imgRec =  get_template_directory_uri().'/images/recruitment/img-4.png';
+						$termJobSkill = getTermTaxonomy('job-skill',$post->ID);
+						$termJobLocation = getTermTaxonomy('job-location',$post->ID);
+						$jobSalary = getPostMeta('salary',$post->ID);
+						$photoDefault = $jobSalary = getPostMeta('default_image',$post->ID);
+						$thumbJobNew = get_post_field('default_image', $post_id);
+						$image_thumb = wp_get_attachment_image_src( $thumbJobNew, 'thumb-recruit-index' );
+						$image_thumb_sp = wp_get_attachment_image_src( $thumbJobNew, 'thumb-recruit-index-sp');
+						$image_src = "";
+						$image_src_sp = "";
+						if($thumbJobNew != ""){
+							$image_src = $image_thumb[0];
+							$image_src_sp = $image_thumb_sp[0];
+						}else{
+							$image_src = get_template_directory_uri() ."/images/imgNew_job_1.png";
+							$image_src_sp = get_template_directory_uri() ."/images/imgNew_job_1.png";
+						}
+					?>
+						<div class="item list-work-item wow fadeInUp animated" data-wow-delay="0.4s">
+		                    <a href="" class="box-work" title="">
+		                        <div class="box-work-img"><img src="<?php echo $imgRec; ?>" alt="<?php the_title();?>" /></div>
+		                        <div class="figcaption"><span><?php the_title();?></span></div>
+		                        <div class="cmt-work">
+									<div class="box-map-sal">
+										<p class="cmt-map">
+											<?php
+			                            	if(count($termJobLocation)>0){
+												foreach ($termJobLocation as $key => $obj) {
+									            	echo $obj->name;
+									            }
+									        }
+											?>
+										</p>
+										<p class="cmt-sal"><?php echo $jobSalary[0]->meta_value;?></p>
+									</div>
+		                            <div class="tit-skill">
+		                                <span>Kỹ năng</span>
+		                            </div>
+		                            <div class="list-skill inner-content-div">
+		                            	<?php
+		                            	if(count($termJobSkill)>0){
+											foreach ($termJobSkill as $key => $obj) {
+								            	echo '<span>'.$obj->name.'</span>';
+								            }
+								        }
+										?>
+		                            </div>
+		                            <span class="readmore">Xem chi tiết >></span>
+		                        </div>
+		                    </a>
+		                </div>
+					<?php
+					endwhile;
+					wp_reset_postdata();
+					endif;
+				?>
+				<?php restore_current_blog();?>
+            	<?php
+            	/*$recruitment = file_get_contents( $hostname.'/?action=recruitment' );
+				$result_4 = json_decode( $recruitment, true );
+				if( $result_4 ) :
+					foreach( $result_4 as $k => $v ) :
+            	?>
+            	<div class="item list-work-item wow fadeInUp animated" data-wow-delay="0.4s">
+                    <a href="<?php echo $v['link']; ?>" class="box-work" title="">
+                        <div class="box-work-img"><img src="<?php echo $v['image']; ?>" alt="" /></div>
+                        <div class="figcaption"><span><?php echo $v['title']; ?></span></div>
+                        <div class="cmt-work">
+							<div class="box-map-sal">
+								<p class="cmt-map"><?php echo implode( ', ', $v['location'] ); ?></p>
+								<p class="cmt-sal"><?php echo $v['salary']; ?> <br /></p>
+							</div>
+                            <div class="tit-skill">
+                                <span>Kỹ năng</span>
+                            </div>
+                            <div class="list-skill inner-content-div">
+                            	<?php echo '<span>'.implode( '</span> <span>', $v['skills'] ).'</span>'; ?>
+                            </div>
+                            <span class="readmore">Xem chi tiết >></span>
+                        </div>
+                    </a>
+                </div>
+                <?php
+                	endforeach;
+            	endif;*/ ?>
+            </div>
+		</div>
+	</div>
+</div>
+<!--.MAP -->
+<div class="map-home container-fluid">
+	<div class="container">
+		<div class="row">
+			<h3>エボラブルアジアエージェントの強み</h3>
+			<!-- <a href="#"><img data-wow-delay="0.4s" class="wow fadeInDown animated" src="images/map.png" alt="" /></a> -->
+			<div data-wow-delay="0.4s" class="map-comment list-forte wow fadeInUp animated clearfix">
+				<div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 forte">
+					<div class="float-shadow"><img src="<?php echo get_template_directory_uri(); ?>/images/forte-1.png" alt="エボラブルアジアエージェントの強み" /></div>
+						<h4><span>人材紹介サービス</span></h4>
+						<p>アジア圏を中心にシンガポール、インド、中国などで人材会社立ち上げに参画した経験のあるコンサルタントが、あなたにあった仕事探しからその後の生活面のアドバイスにいたるまで徹底したサポートをご用意しております。海外就労に関してのノウハウで充実のサポート体制を実現。安心して求職活動に取り組めます。</p>
+					</div>
+					<div class=" col-xs-12 col-sm-12 col-xs-4 col-md-4 col-lg-4 forte">
+						<div class="float-shadow"><img src="<?php echo get_template_directory_uri(); ?>/images/forte-2.png" alt="エボラブルアジアエージェントの強み" /></div>
+						<h4><span>「すべてを伝える」コンサルティング</span></h4>
+						<p>海外で働くのは楽しい！は誰だって簡単に言えます。でもエージェントは大変なこともきちんと伝える。それは求人を紹介して終わりではなく、長期的にお客様と向き合うことを心がけているから。エージェントは「すべてを伝える」パートナーとして、二人三脚で本当のキャリアアップを目指します。</p>
+					</div>
+					<div class=" col-xs-12 col-sm-12 col-xs-4 col-md-4 col-lg-4 forte">
+						<div class="float-shadow"><img src="<?php echo get_template_directory_uri(); ?>/images/forte-3.png" alt="エボラブルアジアエージェントの強み" /></div>
+						<h4><span>グローバルな求人ネットワーク</span></h4>
+						<p>グローバル人材が増えていくなか、働く場所を選ぶのもトレンドになる現在。そんなあなたの”ここで働きたい”を叶えるため、エージェントは台湾やインドなど各国の人材紹介会社との提携、アジア圏を中心に求人を紹介しております。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php
+get_footer();

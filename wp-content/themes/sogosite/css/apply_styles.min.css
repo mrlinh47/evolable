@@ -1,0 +1,374 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+input[type=number] {
+    -moz-appearance: textfield
+}
+#breadcrumb-blo {
+    background: url(../images/apply_job/banner_breadcrumbs.png) no-repeat left #5ec33c
+}
+.text-center .btn-default {
+    border-color: #fff
+}
+.text-center .btn-default.focus, .text-center .btn-default:focus {
+    background: transparent;
+}
+.cont-breadcrumb {
+    padding: 26px 0 27px;
+    box-sizing: border-box
+}
+.body-apply-form .form-horizontal .form-group.have-fileupload>div input,
+.cont-breadcrumb>div {
+    display: inline-block
+}
+.cont-breadcrumb #bc-selectLang>button {
+    border: 1px solid #fff;
+    border-radius: 8px
+}
+.text-center .btn-default {
+    border-color: #fff
+}
+.btn-default.active,
+.btn-default:active,
+.btn-default:hover,
+.open>.btn-default.dropdown-toggle {
+    background: transparent
+}
+.cont-breadcrumb .breadcrumb-sub h3 {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 37px;
+    background-color: #42ae1d;
+    padding-left: 31px;
+    padding-right: 49px;
+    margin: 0 63px 0 0;
+    position: relative
+}
+.cont-breadcrumb .breadcrumb-sub h3:before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 19px;
+    background: #fff;
+    left: 17px;
+    top: 9px;
+    z-index: 2
+}
+.cont-breadcrumb .breadcrumb-sub h3:after {
+    content: "";
+    position: absolute;
+    right: -18px;
+    top: 0;
+    z-index: 2;
+    width: 0;
+    height: 0;
+    border-bottom: 19px solid transparent;
+    border-top: 18px solid transparent;
+    border-left: 18px solid #42ae1d
+}
+.cont-breadcrumb .breadcrumb-sub div {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+    line-height: 30px
+}
+#apply-info {
+    box-shadow: 0 4px 2px -2px #ccc
+}
+#apply-info .cont-apply-info {
+    padding: 11px 0
+}
+#apply-info .cont-apply-info h4 {
+    font-weight: 700;
+    padding: 17px 15px;
+    border-left: 11px solid #5ec33c;
+    margin: 0 0 0 -15px;
+    line-height: normal;
+    color: #2f2f2f
+}
+#apply-info .cont-apply-info .code-apply {
+    padding: 17px 0
+}
+#apply-info .cont-apply-info .code-apply>span,
+.txt-red {
+    color: #4e4e4e;
+    font-weight: 500
+}
+#apply-info .cont-apply-info .code-apply>span>strong {
+    font-weight: 700;
+    font-size: 18px
+}
+#cont-apply-job {
+    padding: 30px 0 42px
+}
+.job-desc>div {
+    border-bottom: 1px solid #ccc;
+    padding: 11px 10px 11px 30px
+}
+.job-desc>div p {
+    margin-bottom: 0
+}
+.job-desc .job-location {
+    background: url(../images/apply_job/icon_location.png) no-repeat left 10px
+}
+.job-desc .job-salary {
+    background: url(../images/apply_job/icon_currency.png) no-repeat left 10px
+}
+.job-desc .job-workingtime {
+    background: url(../images/apply_job/icon_time.png) no-repeat left 10px
+}
+.job-desc .job-location.benefit {
+    background: url(../images/apply_job/icon_gift.png) no-repeat left 10px
+}
+.txt-red {
+    font-size: 14px;
+    color: #ea0000
+}
+#apply-form {
+    padding-bottom: 120px
+}
+.cont-apply-form .panel {
+    border-radius: 10px;
+    -webkit-box-shadow: 0 1px 9px 0 rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0 1px 9px 0 rgba(0, 0, 0, .25);
+    box-shadow: 0 1px 9px 0 rgba(0, 0, 0, .25)
+}
+.cont-apply-form .panel .panel-heading {
+    background: #5ec33c;
+    padding: 12px 15px;
+    border-radius: 10px 10px 0 0
+}
+.cont-apply-form .panel .panel-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff
+}
+.body-apply-form {
+    padding: 40px 15px 50px
+}
+.body-apply-form .form-group label {
+    text-align: left;
+    padding-right: 20px;
+    padding-top: 0
+}
+.body-apply-form .form-group label.required {
+    padding-right: 0
+}
+.body-apply-form .form-group label>span {
+    display: block
+}
+.body-apply-form .form-group label.lb-comment {
+    text-align: right;
+    padding-right: 10px
+}
+.body-apply-form .form-group .form-control {
+    height: 40px;
+    background-color: #f6f6f6
+}
+.body-apply-form .form-group textarea.form-control {
+    height: 103px
+}
+.body-apply-form .form-horizontal .form-group {
+    margin-bottom: 22px
+}
+.body-apply-form .form-horizontal .form-group.have-fileupload>div input.input-file {
+    opacity: 0;
+    width: 0;
+    height: 0
+}
+.body-apply-form .form-horizontal .form-group.have-fileupload>div input.input-file:active+label+span {
+    background: #59aa32
+}
+.body-apply-form .form-horizontal .form-group.have-fileupload>div input.input-file:active+label+span>span {
+    background: #59aa32;
+    color: #fff
+}
+.body-apply-form .form-horizontal .form-group.have-fileupload>div input.input-file:focus+label+span {
+    background: #59aa32
+}
+.body-apply-form .form-horizontal .form-group.have-fileupload>div input.input-file:focus+label+span>span {
+    background: #59aa32;
+    color: #fff
+}
+.body-apply-form .form-horizontal .form-group.have-fileupload>div input.input-file+label {
+    border: 1px solid #afafaf;
+    width: 150px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border-radius: 6px;
+    background-image: -moz-linear-gradient(90deg, #d6d6d6 0%, #f2f2f2 100%);
+    background-image: -webkit-linear-gradient(90deg, #d6d6d6 0%, #f2f2f2 100%);
+    background-image: -ms-linear-gradient(90deg, #d6d6d6 0%, #f2f2f2 100%);
+    padding: 0 20px 0 40px;
+    margin-bottom: 0;
+    position: relative
+}
+.body-apply-form .form-horizontal .form-group.have-fileupload>div input.input-file+label:before {
+    background: url(../images/apply_job/icon_file_upload.png) no-repeat left center;
+    width: 19px;
+    height: 21px;
+    position: absolute;
+    left: 15px;
+    top: 6px;
+    content: ""
+}
+.body-apply-form .form-horizontal .form-group.have-fileupload>div span {
+    display: inline-block;
+    background-color: #f5f5f5
+}
+.body-apply-form .form-horizontal .form-group.have-fileupload>div span>span {
+    font-size: 18px;
+    color: #737373
+}
+.body-apply-form .form-horizontal .form-group.have-fileupload>label {
+    padding: 8px 0 8px 15px
+}
+.body-apply-form .form-horizontal .form-group.form-group-comment {
+    padding-right: 50px
+}
+.body-apply-form .term-content {
+    margin: 0 45px 30px;
+    text-align: justify;
+    border: 1px solid #ccc;
+    padding: 20px;
+    height: 128px;
+    overflow-y: scroll;
+    box-shadow: inset 0 0 10px #ccc;
+    -moz-box-shadow: inset 0 0 10px #ccc;
+    -ms-box-shadow: inset 0 0 10px #ccc;
+    -webkit-box-shadow: inset 0 0 10px #ccc
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .body-apply-form .form-horizontal .form-group.form-group-comment {
+        padding-right: 40px
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .body-apply-form .form-horizontal .form-group.form-group-comment {
+        padding-right: 0
+    }
+    .body-apply-form .form-group label.lb-comment {
+        text-align: left
+    }
+    .body-apply-form .term-content {
+        margin: 0 0 30px
+    }
+    #cont-apply-job .job-image {
+        margin-left: 15px
+    }
+}
+@media (max-width: 767px) {
+    .body-apply-form {
+        padding: 20px 15px 25px
+    }
+    .body-apply-form .form-group label.lb-comment {
+        text-align: left
+    }
+    .body-apply-form .form-horizontal .form-group {
+        margin-bottom: 12px
+    }
+    .body-apply-form .form-horizontal .form-group.form-group-comment {
+        padding-right: 0
+    }
+    .body-apply-form .term-content {
+        margin: 0 0 30px
+    }
+    #cont-apply-job #btnSubmit,
+    .body-apply-form #btnSubmit {
+        max-width: 100%
+    }
+    #cont-apply-job #btnSubmit:after,
+    .body-apply-form #btnSubmit:after {
+        right: 25%
+    }
+    #cont-apply-job {
+        padding: 15px 0 20px
+    }
+    #cont-apply-job .job-image {
+        margin-bottom: 10px
+    }
+    #cont-apply-job .job-image img {
+        margin: 0 auto
+    }
+    .cont-apply-form .panel .panel-title {
+        font-size: 18px
+    }
+    .body-apply-form .form-horizontal .form-group.have-fileupload>div input.input-file+label {
+        width: 115px;
+        font-size: 14px;
+        padding: 0 0 0 17px
+    }
+    .body-apply-form .form-horizontal .form-group.have-fileupload>div input.input-file+label:before {
+        left: 4px
+    }
+    .body-apply-form .form-horizontal .form-group.have-fileupload>label {
+        padding: 0 0 0 15px
+    }
+    #apply-info .cont-apply-info h4 {
+        font-size: 15px;
+        padding: 7px 0 7px 10px;
+        border-left: 7px solid #5ec33c;
+        margin-right: -10px
+    }
+    #apply-info .cont-apply-info .code-apply {
+        padding: 4px 0
+    }
+    #apply-info .cont-apply-info .code-apply>span {
+        font-size: 14px
+    }
+    #apply-info .cont-apply-info .code-apply>span>strong {
+        font-size: 15px
+    }
+    .cont-breadcrumb .breadcrumb-sub h3 {
+        font-size: 16px;
+        margin-right: 15px;
+        padding-right: 5px
+    }
+    .cont-breadcrumb .breadcrumb-sub div {
+        font-size: 16px
+    }
+    #apply-form {
+        padding-bottom: 20px
+    }
+}
+@media (max-width: 320px) {
+    #apply-info .cont-apply-info h4 {
+        font-size: 15px;
+        padding: 4px 0 4px 7px
+    }
+    #apply-info .cont-apply-info .code-apply>span {
+        font-size: 11px
+    }
+    #apply-info .cont-apply-info .code-apply>span>strong,
+    .body-apply-form .form-horizontal .form-group.have-fileupload>div span>span {
+        font-size: 15px
+    }
+    .cont-breadcrumb .breadcrumb-sub h3 {
+        font-size: 14px;
+        padding-right: 0;
+        padding-left: 15px;
+        margin-right: 20px
+    }
+    .cont-breadcrumb .breadcrumb-sub h3:before {
+        left: 6px
+    }
+    .cont-breadcrumb .breadcrumb-sub div {
+        font-size: 14px
+    }
+    .body-apply-form #btnSubmit {
+        padding-right: 30px
+    }
+    .body-apply-form .form-group label {
+        padding-right: 0
+    }
+    .body-apply-form .form-horizontal .form-group.have-fileupload>div span {
+        padding: 5px
+    }
+}

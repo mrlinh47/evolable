@@ -1,0 +1,11 @@
+Truy c?p Cpanel: https://125.253.119.23:2083 ho?c http://125.253.119.23:2082
+
+User:  thamtuba
+
+Pass:  m2sgqZWxcM
+
+Truy c?p FPT:  ftp://125.253.119.23
+
+User:  thamtuba
+
+Pass:  m2sgqZWxcM

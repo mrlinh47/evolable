@@ -1,0 +1,86 @@
+img {
+	max-width: 100%;
+}
+.breadcrumb-news-detail a, .breadcrumb-news-detail span {
+	color: #4f4f4f;
+	font-weight: 500;
+}
+.breadcrumb-news-detail a{
+	color: #ab2430 !important;
+}
+.breadcrumb-news-detail a:hover{
+	color: #5ec33c !important;
+}
+span.sep {
+	color: #ccc;
+}
+#Profile-block, #Blog-news-block, .wr-recrui, #Interviewer-block, .container.wr-business {
+	padding-top: 20px;
+}
+.profile-info, .row.blog-news-list, .wr-select-adv {
+
+}
+.breadcrumb-news-detail {
+	margin-bottom: 20px;
+}
+.wr-detail .content-detail {
+	padding-top: 20px;
+}
+.wr-detail .container.content-detail .breadcrumb-news-detail {
+	margin-bottom: 20px;
+}
+.job-location span {
+	cursor: pointer;
+}
+.job-location .toogle-benefit {
+	margin-top: 10px;
+	display: none;
+}
+
+.row-dt-4{
+	position: relative;
+	background: url(../images/recruitment-detail/icon-toggle.png) top 5px right 2px no-repeat;
+}
+
+.row-dt-4.active {
+    background: url(../images/recruitment-detail/icon-toggle-active.png) top 5px right 2px no-repeat;	
+}
+.job-location.benefit {
+	position: relative;
+}
+.job-location.benefit:before {
+	content: "";
+	background: url(../images/recruitment-detail/icon-toggle.png) no-repeat;
+	position: absolute;
+	z-index: 2;
+	width: 11px;
+	height: 8px;
+	right: 0;
+	top: 18px;
+}
+.job-location.benefit.active:before {
+	content: "";
+	background: url(../images/recruitment-detail/icon-toggle-active.png) no-repeat;
+	position: absolute;
+	z-index: 2;
+	width: 11px;
+	height: 8px;
+	right: 0;
+	top: 18px;
+}
+/*-- UPDATE 2908 ---*/
+.navbar-footermenu .navbar-nav>li:last-child {
+	background: url(../images/icon_header_menu.png) no-repeat 5px center;
+}
+@media screen and (max-width: 767px) {
+	#Profile-block, #Blog-news-block, .wr-recrui, #Interviewer-block, .container.wr-business {
+		padding-top: 20px;
+	}	
+	.breadcrumb-news-detail {
+		margin-bottom: 20px;
+	}
+	.blog-news-list {
+	    margin-left: 0px;
+		margin-right: 0px;	
+	}
+}

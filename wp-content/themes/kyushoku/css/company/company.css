@@ -1,0 +1,308 @@
+.img-responsive {
+  display: block;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 70px 0;
+}
+
+/**********
+Profile-block
+**********/
+#Profile-block {
+  background: #fff;
+}
+
+/*profile-info*/
+.profile-info {
+  list-style-type: none;
+  color: #4d4e4d;
+  font-size: 15px;
+  font-weight: 500;
+}
+.profile-info dt {
+  margin: 0px;
+  float: left;
+  padding: 10px 0 9px 20px;
+  width: 16.666%;
+  line-height: 22px;
+  background: #efefef;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.profile-info dd {
+  padding: 10px 0 10px 27%;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+.profile-info dd.no-pd-top {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.profile-info dd span {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/*profile-map*/
+.profile-map {
+  margin-top: 30px;
+}
+
+#map {
+  width: 100%;
+  height: 378px;
+}
+
+.wr-server {
+  margin: 0 auto;
+  width: 100%;
+  background: #fff;
+  padding-bottom: 117px;
+  padding-top: 75px;
+}
+.server-box h4 {
+  font-weight: bold;
+  /*margin-bottom: 38px;*/
+}
+.server-box-1, .server-box-2, .server-box-3 {
+  margin-bottom: 51px;
+}
+.wr-server .server-box p {
+  position: relative;
+  padding-left: 22px;
+  /*margin-bottom: 23px;*/
+  font-weight: 400;
+}
+.wr-server .server-box p:before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 9px;
+  height: 9px;
+  background: url('../../images/company/icon-dot.png') no-repeat;
+  top: 5px;
+}
+.wr-server .server-box-4 p {
+  padding-left: 0;
+}
+.wr-server .server-box-4 p:before {
+  content: none;
+}
+
+.message-director-career {
+  background: #f5f5f5;
+}
+.message-director-career-box {
+  background-color: #fff;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  padding: 50px 35px;
+}
+.box-inner:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.box-inner-img {
+  float: left;
+  width: 351px;
+}
+.box-inner-img p {
+  text-align: center;
+  margin: 0;
+}
+.box-inner-img .mdc-position-jp {
+  font-size: 17px;
+  font-weight: bold;
+  border-bottom: 1px solid #e3e3e3;
+  margin-top: 30px;
+}
+.box-inner-img .mdc-position-en {
+  color: #5ec33c;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-top: 7px;
+}
+.box-inner-txt {
+  float: right;
+  width: 675px;
+  border-bottom: 2px dotted #c8c8c8;
+  padding-bottom: 50px;
+}
+.box-inner .ttl-commom {
+  float: left;
+  padding-top: 25px;
+}
+.box-inner-sec {
+  margin-top: 60px;
+}
+.box-inner-sec .box-inner-txt {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.box-inner-sec .ttl-commom h2 {
+  margin-bottom: 0;
+}
+.box-inner-sec .ttl-commom h2:after {
+  content: '';
+  border-top: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid #4d4e4d;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+
+@media (max-width: 767px) {
+  .section-block {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .profile-info dt {
+    width: 75px;
+    text-align: center;
+    padding-left: 0;
+  }
+  .profile-info dd {
+    padding-left: 85px;
+  }
+  .wr-server {
+    padding-bottom: 50px;
+    padding-top: 30px;
+  }
+  .box-inner-img, .box-inner-txt {
+    width: auto;
+  }
+  .ttl-commom h2 {
+    font-size: 20px;
+  }
+  .message-director-career-box {    
+    padding: 30px 15px;
+  }
+  .box-inner-sec {
+    margin-top: 30px;
+  }
+  .box-inner-sec .ttl-commom {
+    padding-top: 0;
+  }
+  .box-inner-txt {
+    padding-bottom: 30px;
+  }
+  .box-inner-sec .ttl-commom h2 {
+    margin-bottom: 20px;
+  }
+  .box-inner-sec .ttl-commom h2:after {
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+  }
+  .box-inner-img {
+    margin-bottom: 20px;
+  }
+}
+/**********
+End Profile-block
+**********/
+/**********
+Boss-message-block
+**********/
+#Boss-message-block {
+  background: #f5f5f5;
+}
+#Boss-message-block .section-block {
+  background: #fff;
+  padding: 60px 35px 100px;
+}
+
+.boss-message .box-img {
+  max-width: 350px;
+  margin: 0 auto;
+}
+.boss-message .ttl {
+  text-align: center;
+  font-size: 18px;
+  color: #4d4e4d;
+  font-weight: 500;
+  line-height: 30px;
+  margin-top: 35px;
+}
+.boss-message .ttl span {
+  display: block;
+  font-weight: 500;
+  border-top: 1px solid #e3e3e3;
+  color: #5ec33c;
+  text-transform: uppercase;
+  padding-top: 5px;
+}
+
+/*boss-info*/
+.boss-info {
+  list-style-type: none;
+  color: #4d4e4d;
+  font-size: 15px;
+}
+.boss-info dt {
+  margin: 0px;
+  float: left;
+  padding: 0 0 0 10px;
+  width: 120px;
+  line-height: 32px;
+  background: #5ec33c;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+.boss-info dd {
+  padding: 3px 0 0 150px;
+  margin-bottom: 12px;
+  line-height: 24px;
+}
+.boss-info dd p {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+@media (max-width: 991px) {
+  .boss-info {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .section {
+    padding: 30px 0;
+  }
+
+  #Boss-message-block .section-block {
+    padding: 30px 15px;
+  }
+
+  .boss-info {
+    margin-top: 20px;
+  }
+  .boss-info dt {
+    width: 100px;
+    padding-left: 0;
+    text-align: center;
+  }
+  .boss-info dd {
+    padding: 0 0 0 110px;
+    line-height: 21px;
+  }
+  .boss-info dd p {
+    border-bottom: 0;
+    margin-top: -2px;
+  }
+}
+/**********
+End Boss-message-block
+**********/
+
+/*# sourceMappingURL=profile.css.map */
