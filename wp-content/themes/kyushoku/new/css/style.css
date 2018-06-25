@@ -741,3 +741,16 @@ p.re-ended{
     color: #000;
     font-weight: 600;
 }
+::-webkit-scrollbar {
+  height: 5px;        
+  width: 5px;
+  border: 1px solid #d5d5d5;
+}
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: #eeeeee;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, .3);
+}
